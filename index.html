@@ -270,7 +270,7 @@ body::before {
 
   <div class="controls">
     <button id="play" type="button">Pause</button>
-    <button id="sound" type="button" aria-pressed="false">Sound on</button>
+    <button id="sound" type="button" aria-pressed="true">Mute</button>
     <audio id="narration" src="biogas_narration_en.mp3" preload="auto"></audio>
     <input id="scrub" type="range" min="0" max="48" step="0.05" value="0" aria-label="Time">
     <span class="time" id="time">0:00 / 0:48</span>
@@ -857,11 +857,37 @@ $("resetCam").addEventListener("click", () => { freeCam = false; syncUI(); });
    "british_wow"), each step's line starting at that step's start time. The audio
    follows the timeline t; browsers only allow sound after a click. */
 const narration = $("narration");
-let soundOn = false;
-$("sound").addEventListener("click", () => {
-  soundOn = !soundOn;
+// Sound is ON by default. Browsers block sound until the visitor has
+// interacted with the page once, so if play() is refused the button says
+// "tap for sound" and the first tap/key anywhere starts the voice in sync.
+const SOUND_LABEL = { on: "Mute", off: "Sound on", blocked: "Tap for sound" };
+let soundOn = true, audioBlocked = false, playPending = false, unlockedNow = false;
+function soundLabel() {
   $("sound").setAttribute("aria-pressed", String(soundOn));
-  $("sound").textContent = soundOn ? "Mute" : "Sound on";
+  $("sound").textContent = !soundOn ? SOUND_LABEL.off : (audioBlocked ? SOUND_LABEL.blocked : SOUND_LABEL.on);
+}
+function tryPlay() {
+  if (playPending) return;
+  playPending = true;
+  narration.play().then(() => { playPending = false; },
+    () => { playPending = false; audioBlocked = true; soundLabel(); });
+}
+function unlockSound() {                      // runs inside the visitor's first gesture
+  if (!audioBlocked) return;
+  audioBlocked = false; unlockedNow = true;
+  setTimeout(() => { unlockedNow = false; }, 400);
+  soundLabel();
+  if (soundOn && playing) {
+    try { narration.currentTime = t; } catch (e) { /* not loaded yet */ }
+    tryPlay();
+  }
+}
+["pointerdown", "keydown", "touchstart"].forEach(ev =>
+  document.addEventListener(ev, unlockSound, { capture: true }));
+$("sound").addEventListener("click", () => {
+  if (unlockedNow) { unlockedNow = false; return; }   // this tap just turned the sound on
+  soundOn = !soundOn;
+  soundLabel();
   if (soundOn && !playing) {
     if (t >= DURATION - .05) { t = 0; freeCam = false; }
     playing = true;
@@ -869,12 +895,13 @@ $("sound").addEventListener("click", () => {
   syncUI();
 });
 function syncAudio() {
-  if (!soundOn || !playing) { if (!narration.paused) narration.pause(); return; }
+  if (!soundOn || !playing || audioBlocked) { if (!narration.paused) narration.pause(); return; }
   if (Math.abs(narration.currentTime - t) > .3) {
     try { narration.currentTime = t; } catch (e) { /* not loaded yet */ }
   }
-  if (narration.paused) narration.play().catch(() => {});
+  if (narration.paused) tryPlay();
 }
+soundLabel();
 controls.addEventListener("start", () => { freeCam = true; syncUI(); });
 
 /* Resize ---------------------------------------------------------------------- */
