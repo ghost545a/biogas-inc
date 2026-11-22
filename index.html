@@ -141,6 +141,13 @@ button {
   background: transparent; padding: 6px 14px; line-height: 1.4;
 }
 button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* Response: feedback on press, instantly (Apple: respond on pointer-down) */
+button { transition: transform 100ms ease-out, background-color 120ms ease-out; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+button:active { transform: scale(.97); }
+@media (hover: hover) { button:hover { background-color: color-mix(in srgb, var(--ink) 6%, transparent); } }
+@media (prefers-reduced-motion: reduce) { button:active { transform: none; } }
+/* Display tracking: tighten large Latin headings only (tracking breaks Arabic joins) */
+[lang^="en"] h1 { letter-spacing: -0.02em; }
 #play { background: var(--accent); color: var(--accent-ink); border-color: var(--accent);
         font-weight: 600; min-width: 108px; }
 #scrub { flex: 1 1 220px; min-width: 0; accent-color: var(--accent); }
@@ -148,20 +155,28 @@ button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); ou
 #resetCam[hidden] { display: none; }
 #sound[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); font-weight: 600; }
 
+/* Steps: one segmented progress track — done steps filled, the current one in
+   the accent, the rest empty. Doubles as "where am I" in the story. */
 ol.steps {
   list-style: none; margin: 0; padding: 0;
-  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px;
+  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px;
 }
 .steps button {
-  width: 100%; border-radius: 12px; text-align: left;
-  display: grid; gap: 0; padding: 8px 10px; background: var(--surface);
+  position: relative; width: 100%; border: 0; border-radius: 10px; text-align: start;
+  display: grid; gap: 0; padding: 12px 8px 6px; background: transparent; color: var(--ink-2);
 }
-.steps .n { font-size: 11.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.steps button::before {
+  content: ""; position: absolute; top: 0; left: 4px; right: 4px; height: 4px; border-radius: 2px;
+  background: var(--line); transition: background-color 200ms ease-out;
+}
+.steps button.done::before { background: color-mix(in srgb, var(--accent) 40%, var(--line)); }
+.steps button[aria-current="step"]::before { background: var(--accent); }
+.steps .n { font-size: 11.5px; font-variant-numeric: tabular-nums; }
 .steps .t { font-weight: 600; font-size: 14px; }
-.steps button[aria-current="step"] { border-color: var(--accent); box-shadow: inset 0 -3px 0 var(--accent); }
+.steps button[aria-current="step"] { color: var(--ink); }
 .steps button[aria-current="step"] .n { color: var(--accent); }
 @media (max-width: 820px) {
-  ol.steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  ol.steps { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 10px; }
 }
 @media (max-width: 420px) {
   ol.steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -182,9 +197,25 @@ body { margin: 0; }
 img { max-width: 100%; }
 [hidden] { display: none !important; }
 :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+/* Top bar: a translucent layer that stays while the page scrolls under it
+   (Apple materials), full-bleed with its content on the page's 1180px column. */
+body { padding-top: 0; }
 .topbar {
-  max-width: 1180px; margin: 0 auto 6px; display: flex; align-items: center;
-  justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  margin: 0 calc(-1 * max(16px, env(safe-area-inset-right, 0px))) 10px calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  padding-block: 10px; padding-inline: max(16px, calc((100% - 1180px) / 2));
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%);
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--bg);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .topbar { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+@media (prefers-contrast: more) {
+  .topbar { background: var(--bg); border-bottom: 1px solid var(--ink-2); }
 }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; min-width: 0; }
 .brand svg { flex: none; }
@@ -197,21 +228,18 @@ img { max-width: 100%; }
 }
 .lang a[aria-current="page"] { background: var(--accent); color: var(--accent-ink); }
 .lang a:focus-visible, .brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.soon { display: grid; gap: 12px; padding-block: 18px 4px; }
+/* Coming soon: said once, next to the heading; the two parts as a plain list. */
+.soon { display: grid; gap: 10px; padding-block: 22px 6px; }
+.soon-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
 .soon h2 { font-family: var(--font-display); font-size: 24px; margin: 0; }
 .soon > p { margin: 0; color: var(--ink-2); max-width: 65ch; }
-.soon-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.soon-card {
-  background: var(--surface); border: 1px dashed var(--line); border-radius: var(--radius);
-  padding: 18px; display: grid; gap: 6px; align-content: start; min-width: 0;
-}
-.soon-card h3 { margin: 0; font-family: var(--font-display); font-size: 18px; }
-.soon-card p { margin: 0; color: var(--ink-2); }
-.badge {
-  justify-self: start; font-size: 12px; font-weight: 600; letter-spacing: .02em;
-  color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 1px 10px;
-}
-@media (max-width: 640px) { .soon-grid { grid-template-columns: 1fr; } }
+.badge { font-size: 13px; font-weight: 600; color: var(--accent); }
+.soon-list { list-style: none; margin: 4px 0 0; padding: 0; display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
+.soon-list li { padding-block: 12px; border-top: 1px solid var(--line); min-width: 0; }
+.soon-list h3 { margin: 0 0 2px; font-family: var(--font-display); font-size: 17px; }
+.soon-list p { margin: 0; color: var(--ink-2); }
+@media (max-width: 640px) { .soon-list { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -252,12 +280,12 @@ img { max-width: 100%; }
   <ol class="steps" id="steps"></ol>
 
   <section class="soon" id="how-to" aria-labelledby="soon-h">
-    <h2 id="soon-h">How to build one, and the method</h2>
-    <p>Coming soon: a practical guide to building a household digester, and how every number on this page is calculated.</p>
-    <div class="soon-grid">
-    <article class="soon-card"><span class="badge">Coming soon</span><h3>How to build a home digester</h3><p>Materials, size, step-by-step build and safety.</p></article>
-    <article class="soon-card"><span class="badge">Coming soon</span><h3>The method</h3><p>Data sources, assumptions and the calculations behind the numbers.</p></article>
-    </div>
+    <div class="soon-head"><h2 id="soon-h">How to build one, and the method</h2><span class="badge">Coming soon</span></div>
+    <p>A practical guide to building a household digester, and how every number on this page is calculated.</p>
+    <ul class="soon-list">
+      <li><h3>How to build a home digester</h3><p>Materials, size, step-by-step build and safety.</p></li>
+      <li><h3>The method</h3><p>Data sources, assumptions and the calculations behind the numbers.</p></li>
+    </ul>
   </section>
 
   <footer>
@@ -311,7 +339,7 @@ const CHAPTERS = [
     cam: { pos: [-2.4, 3.6, 7.2], target: [-4.6, 0.6, -2.6] } },
   { start: 37, end: 43, short: "Fertiliser", title: "Organic fertiliser",
     body: "The digested slurry flows out to the outlet tank and is spread on the fields as a nitrogen-rich organic fertiliser instead of chemical ones.",
-    stat: "Organic fertiliser", sub: "a by-product of every digester",
+    stat: "Nitrogen-rich", sub: "organic fertiliser, a by-product of every digester",
     cam: { pos: [-5.2, 4.4, 9.2], target: [-6.0, 0.2, 1.8] } },
   { start: 43, end: 48, short: "Totals", title: "The potential in 22 Arab countries",
     body: "", stat: "", sub: "", summary: true,
@@ -802,7 +830,11 @@ function renderCaption(i) {
   } else {
     ex.innerHTML = `<div class="stat">${c.stat}<small>${c.sub}</small></div>`;
   }
-  stepsEl.querySelectorAll("button").forEach((b, j) => b.toggleAttribute("aria-current", false) || (j === i && b.setAttribute("aria-current", "step")));
+  stepsEl.querySelectorAll("button").forEach((b, j) => {
+    b.toggleAttribute("aria-current", false);
+    if (j === i) b.setAttribute("aria-current", "step");
+    b.classList.toggle("done", j < i);
+  });
 }
 let t = 0, playing = !reduceMotion, freeCam = false;
 function syncUI(force) {
@@ -882,13 +914,44 @@ function frame(now) {
   update(t, amb);
   if (!freeCam) {
     scriptedCamera(t);
-    camera.position.copy(camPos); controls.target.copy(camTarget); camera.lookAt(camTarget);
+    followCamera(dt);
   } else {
     controls.update();
+    // keep the "presentation value" current, so a reset starts from here
+    curPos.copy(camera.position); curTarget.copy(controls.target);
+    velPos.set(0, 0, 0); velTarget.set(0, 0, 0);
   }
   renderer.render(scene, camera);
   updatePins(t);
   requestAnimationFrame(frame);
+}
+
+/* Camera follow: a critically damped spring (Apple: damping 1.0) from the
+   camera's current on-screen position to the scripted one. Jumping to a step
+   or resetting the camera glides from wherever it is instead of teleporting,
+   and a new jump mid-glide re-targets without a jolt (velocity carries over).
+   Reduced motion snaps instead. The MP4 renderer uses scriptedCamera() only. */
+const curPos = new THREE.Vector3(), curTarget = new THREE.Vector3();
+const velPos = new THREE.Vector3(), velTarget = new THREE.Vector3(), acc = new THREE.Vector3();
+let camReady = false;
+const CAM_RESPONSE = 0.55;                    // seconds, Apple's "response"
+function springStep(cur, vel, target, dt) {
+  const w = 2 * Math.PI / CAM_RESPONSE;
+  acc.copy(target).sub(cur).multiplyScalar(w * w).addScaledVector(vel, -2 * w);
+  vel.addScaledVector(acc, dt);
+  cur.addScaledVector(vel, dt);
+}
+function followCamera(dt) {
+  if (!camReady || reduceMotion) {
+    curPos.copy(camPos); curTarget.copy(camTarget); camReady = true;
+  } else {
+    for (let s = dt; s > 1e-6; s -= 1 / 240) {   // small sub-steps keep the spring stable
+      const h = Math.min(s, 1 / 240);
+      springStep(curPos, velPos, camPos, h);
+      springStep(curTarget, velTarget, camTarget, h);
+    }
+  }
+  camera.position.copy(curPos); controls.target.copy(curTarget); camera.lookAt(curTarget);
 }
 syncUI(true);
 
