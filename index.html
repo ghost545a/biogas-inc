@@ -240,6 +240,11 @@ body::before {
 .soon-list h3 { margin: 0 0 2px; font-family: var(--font-display); font-size: 17px; }
 .soon-list p { margin: 0; color: var(--ink-2); }
 @media (max-width: 640px) { .soon-list { grid-template-columns: 1fr; } }
+/* Phone-only: comfortable touch targets (nothing here applies on a PC-width screen). */
+@media (max-width: 600px) {
+  .lang a { padding: 8px 16px; }
+  #scrub { height: 32px; }
+}
 </style>
 </head>
 <body>
