@@ -1,6 +1,6 @@
 # BioGas Inc.
 
-By Mohammed Anwar. Live site: https://ghost545a.github.io/biogas-inc/
+By Mohammed Anwar. Live site: https://mohammedmahram.blog/biogas-inc/
 
 An interactive 3D walkthrough (English and Arabic) of how livestock manure in the
 22 Arab countries can become biogas for cooking and fertiliser for fields.
