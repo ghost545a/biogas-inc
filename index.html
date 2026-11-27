@@ -228,24 +228,13 @@ body::before {
 }
 .lang a[aria-current="page"] { background: var(--accent); color: var(--accent-ink); }
 .lang a:focus-visible, .brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-/* Coming soon: said once, next to the heading; the two parts as a plain list. */
-.soon { display: grid; gap: 10px; padding-block: 22px 6px; }
-.soon-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-.soon h2 { font-family: var(--font-display); font-size: 24px; margin: 0; }
-.soon > p { margin: 0; color: var(--ink-2); max-width: 65ch; }
-.badge { font-size: 13px; font-weight: 600; color: var(--accent); }
-.soon-list { list-style: none; margin: 4px 0 0; padding: 0; display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
-.soon-list li { padding-block: 12px; border-top: 1px solid var(--line); min-width: 0; }
-.soon-list h3 { margin: 0 0 2px; font-family: var(--font-display); font-size: 17px; }
-.soon-list p { margin: 0; color: var(--ink-2); }
-@media (max-width: 640px) { .soon-list { grid-template-columns: 1fr; } }
 /* Phone-only: comfortable touch targets (nothing here applies on a PC-width screen). */
 @media (max-width: 600px) {
   .lang a { padding: 8px 16px; }
   #scrub { height: 32px; }
 }
 </style>
+<link rel="stylesheet" href="research.css">
 </head>
 <body>
 <nav class="topbar" dir="ltr" aria-label="BioGas Inc.">
@@ -259,6 +248,7 @@ body::before {
   <header>
     <div class="kicker">Biogas from livestock manure · 22 Arab countries</div>
     <h1>From Manure to Kitchen Flame</h1>
+    <a class="research-jump" href="#research">Explore the study and livestock charts</a>
   </header>
 
   <div class="stage-wrap">
@@ -284,17 +274,167 @@ body::before {
 
   <ol class="steps" id="steps"></ol>
 
-  <section class="soon" id="how-to" aria-labelledby="soon-h">
-    <div class="soon-head"><h2 id="soon-h">How to build one, and the method</h2><span class="badge">Coming soon</span></div>
-    <p>A practical guide to building a household digester, and how every number on this page is calculated.</p>
-    <ul class="soon-list">
-      <li><h3>How to build a home digester</h3><p>Materials, size, step-by-step build and safety.</p></li>
-      <li><h3>The method</h3><p>Data sources, assumptions and the calculations behind the numbers.</p></li>
-    </ul>
-  </section>
+  <main class="research" id="how-to" aria-labelledby="research">
+    <h2 id="research">Household biogas in Yemen</h2>
+    <nav class="research-nav" aria-label="Research sections">
+      <a href="#household">Digester design and costs</a>
+      <a href="#sourcing">Sourcing evidence</a>
+      <a href="#livestock">Livestock charts</a>
+      <a href="research/study-ar.html">Full study (Arabic)</a>
+    </nav>
+<section id="household" aria-labelledby="household-heading">
+  <h3 id="household-heading">Cooking with biogas on a Yemeni farm</h3>
+  <p>The study proposes a pilot in Hadramout. Its starting point is what one family can collect each day: 25 kg of fresh cattle manure and 25 litres of water. At this rate the farm needs about 9.13 tonnes of manure and 9.13 m³ of water each year.</p>
+  <h4>From daily feed to cooking fuel</h4>
+  <p>The design holds 40–60 days of slurry in a working volume of 2–3 m³, inside a nominal 3–4 m³ digester. Gas storage is sized separately for the family’s cooking schedule. At a design temperature of 35 °C, the target yield is 40 litres of biogas per kg of fresh manure. The study’s lower and upper cases, 15–50 litres/kg, give 0.375–1.25 m³/day. The <a href="https://www.iea.org/reports/outlook-for-biogas-and-biomethane-prospects-for-organic-growth/sustainable-supply-potential-and-costs">IEA household benchmark</a> is about 1 m³/day from 20–30 kg of manure.</p>
+  <p><strong>At the 1 m³/day target, the digester produces 365 m³/year.</strong> If the family uses 80% of that output to replace purchased fuel, it uses 292 m³/year. At 60% methane, this has the fuel energy of about 136.35 kg of LPG, assuming comparable stove efficiencies. The 80% describes gas used after production. The regional charts apply their 30% to manure collected before digestion.</p>
+  <h4>What the family could save</h4>
+  <p>The base case assumes a future installed price of US$400, US$25/year in cash operating costs, low-cost water and unpaid household labour. Savings depend on the price per kg of LPG actually bought. At US$0.65/kg, the family saves US$88.63/year in purchases, or US$63.63 after operating costs.</p>
+  <table>
+    <caption>Simple payback on the US$400 system</caption>
+    <thead><tr><th scope="col">LPG price (US$/kg)</th><th scope="col">Net savings (US$/year)</th><th scope="col">Payback (years)</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">0.30</th><td>15.91</td><td>25.1</td></tr>
+      <tr><th scope="row">0.65</th><td>63.63</td><td>6.3</td></tr>
+      <tr><th scope="row">1.00</th><td>111.35</td><td>3.6</td></tr>
+      <tr><th scope="row">1.50</th><td>179.53</td><td>2.2</td></tr>
+    </tbody>
+  </table>
+  <p>At US$0.65/kg, a prototype estimated at US$550–900 takes 8.6–14.1 years to repay. For the US$400 case, the ten-year net present value at a 10% real discount rate is −US$9. Lower yield (25 litres/kg) extends simple payback to 13.2 years. Raising annual operating costs to US$70 at the target yield extends it to 21.5 years. The model excludes digestate revenue, financing and major replacements.</p>
+  <h4 id="sourcing">What the sourcing evidence supports</h4>
+  <p>The <a href="https://drc.ngo/en/news/yemen-piloting-biogas-as-a-source-of-clean-energy-and-fertilizer-in-partnership-with-yemini-social-enterprise/">Danish Refugee Council’s 2023 announcement</a> records a Yemeni pilot with <a href="https://biotreasure.co/contact-us/">BioTreasure in Mukalla</a>, a lead for installation and service. <a href="https://artplast-yemen.com/en/product-2/">Art Plast’s catalogue</a> covers liquid-handling components. Gas-contact parts require documented suitability for biogas.</p>
+  <ul>
+    <li><strong>Historical costs.</strong> A <a href="https://www.renewablematter.eu/en/fighting-cholera-with-waste">2019 report from Yemen</a> cited up to US$300 for a home digester. A <a href="https://www.isdb.org/sites/default/files/media/documents/2024-11/Mapping%20affordable%20and%20tranferrable%20climate-smart.pdf">2024 Egyptian assessment</a> reported US$800–1,500 for a household system.</li>
+    <li><strong>Advertised prices.</strong> The study recorded US$60–80 for a <a href="https://wholesaler.alibaba.com/product-detail/PUXIN-biogas-storage-bag-2m3_263927194.html">2 m³ PUXIN storage bag</a>, minimum two, before freight.</li>
+    <li><strong>Planning allowances.</strong> The study set aside US$15–35 for a stove. Its itemised engineering budget for the system totals US$425.50–793.50 including 15% contingency. The component allowances overlap this budget.</li>
+  </ul>
+  <p>The study found no dated quote for delivery and installation at a specific Yemeni farm. Before expansion, the proposed pilot would check dry-season water costs, weigh the feed, measure gas production and stove use separately, and compare actual LPG purchases. A qualified technician would review gas storage, ventilation and pressure protection.</p>
+  <p><a href="research/study-ar.html" hreflang="ar">Read the full study in Arabic</a> · <a href="research/BioYemen_Feasibility_Study_AR.md" download>Download the Arabic study (Markdown)</a></p>
+</section>
+
+<section id="livestock" aria-labelledby="livestock-heading">
+<h3 id="livestock-heading">Biogas potential across 22 Arab countries</h3>
+<p>The supplied charts credit FAOSTAT 2024 for livestock counts. Cattle include buffalo. The underlying data use 2022 for Palestine. Manure, biogas, energy and household equivalents are model estimates.</p>
+<p>Full potential assumes collection of all fresh manure over 365 days. The 30% scenario uses three tenths of that volume. Both assume 60% methane and 1.5 m³ of biogas per household per day for cooking. The separate Yemen household study applies its 80% use assumption to gas already produced by one digester.</p>
+<p>Chart credit · <bdi lang="en">Mohammed Anwar (m7nwar)</bdi></p>
+<details class="chart-sheet" open>
+<summary>All livestock</summary>
+<figure><img src="research/charts/biogas_0_total_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+<figcaption><a href="research/charts/biogas_0_total_ar_16x9.png">Open the original Arabic chart · All livestock</a></figcaption></figure>
+<table><caption>All livestock</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th></tr></thead><tbody>
+<tr><th scope="row">Livestock (million head)</th><td><bdi>363.0</bdi></td></tr>
+<tr><th scope="row">Fresh manure (million tonnes/year)</th><td><bdi>337.6</bdi></td></tr>
+<tr><th scope="row">Theoretical biogas (billion m³/year)</th><td><bdi>14.6</bdi></td></tr>
+<tr><th scope="row">Methane in theoretical biogas (billion m³/year)</th><td><bdi>8.7</bdi></td></tr>
+<tr><th scope="row">Biogas at 30% collection (billion m³/year)</th><td><bdi>4.37</bdi></td></tr>
+<tr><th scope="row">Households at full collection (millions)</th><td><bdi>26.6</bdi></td></tr>
+<tr><th scope="row">Households at 30% collection (millions)</th><td><bdi>8.0</bdi></td></tr>
+<tr><th scope="row">Thermal energy at full collection (TWh/year)</th><td><bdi>87</bdi></td></tr>
+<tr><th scope="row">LPG equivalent at 30% collection (million 12.5 kg cylinders/year)</th><td><bdi>163</bdi></td></tr>
+</tbody></table><table><caption>Share of theoretical biogas</caption><thead><tr><th scope="col">Species</th><th scope="col">Share</th></tr></thead><tbody>
+<tr><th scope="row">Cattle</th><td><bdi>54%</bdi></td></tr>
+<tr><th scope="row">Sheep</th><td><bdi>24%</bdi></td></tr>
+<tr><th scope="row">Goats</th><td><bdi>12%</bdi></td></tr>
+<tr><th scope="row">Camels</th><td><bdi>10%</bdi></td></tr>
+</tbody></table><p>The cylinder equivalent uses 21.5 MJ per m³ of biogas and 46 MJ per kg of LPG. The tables round each result independently.</p>
+</details>
+<details class="chart-sheet">
+<summary>Yemen</summary>
+<figure><img src="research/charts/biogas_yemen_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+<figcaption><a href="research/charts/biogas_yemen_ar_16x9.png">Open the original Arabic chart · Yemen</a></figcaption></figure>
+<table><caption>Yemen</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th></tr></thead><tbody>
+<tr><th scope="row">Livestock (million head)</th><td><bdi>23.6</bdi></td></tr>
+<tr><th scope="row">Fresh manure (million tonnes/year)</th><td><bdi>15.8</bdi></td></tr>
+<tr><th scope="row">Theoretical biogas (million m³/year)</th><td><bdi>708</bdi></td></tr>
+<tr><th scope="row">Methane in theoretical biogas (million m³/year)</th><td><bdi>425</bdi></td></tr>
+<tr><th scope="row">Biogas at 30% collection (million m³/year)</th><td><bdi>212</bdi></td></tr>
+<tr><th scope="row">Households at full collection (millions)</th><td><bdi>1.29</bdi></td></tr>
+<tr><th scope="row">Households at 30% collection (thousands)</th><td><bdi>388</bdi></td></tr>
+</tbody></table><table><caption>Yemen by species</caption><thead><tr><th scope="col">Species</th><th scope="col">Million head</th><th scope="col">Thousand households at 30% collection</th></tr></thead><tbody>
+<tr><th scope="row">Cattle</th><td><bdi>1.97</bdi></td><td><bdi>158</bdi></td></tr>
+<tr><th scope="row">Sheep</th><td><bdi>10.80</bdi></td><td><bdi>108</bdi></td></tr>
+<tr><th scope="row">Goats</th><td><bdi>10.37</bdi></td><td><bdi>104</bdi></td></tr>
+<tr><th scope="row">Camels</th><td><bdi>0.46</bdi></td><td><bdi>18</bdi></td></tr>
+</tbody></table>
+</details>
+<details class="chart-sheet">
+<summary>Cattle</summary>
+<figure><img src="research/charts/biogas_1_cattle_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+<figcaption><a href="research/charts/biogas_1_cattle_ar_16x9.png">Open the original Arabic chart · Cattle</a></figcaption></figure>
+<table><caption>Cattle</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th></tr></thead><tbody>
+<tr><th scope="row">Livestock (million head)</th><td><bdi>53.9</bdi></td></tr>
+<tr><th scope="row">Fresh manure (million tonnes/year)</th><td><bdi>196.7</bdi></td></tr>
+<tr><th scope="row">Theoretical biogas (billion m³/year)</th><td><bdi>7.87</bdi></td></tr>
+<tr><th scope="row">Methane in theoretical biogas (billion m³/year)</th><td><bdi>4.72</bdi></td></tr>
+<tr><th scope="row">Biogas at 30% collection (billion m³/year)</th><td><bdi>2.36</bdi></td></tr>
+<tr><th scope="row">Households at full collection (millions)</th><td><bdi>14.4</bdi></td></tr>
+<tr><th scope="row">Households at 30% collection (millions)</th><td><bdi>4.3</bdi></td></tr>
+<tr><th scope="row">Share of regional biogas potential</th><td><bdi>54%</bdi></td></tr>
+<tr><th scope="row">Fresh manure per head (kg/day)</th><td><bdi>10</bdi></td></tr>
+<tr><th scope="row">Biogas yield (m³/kg of fresh manure)</th><td><bdi>0.040</bdi></td></tr>
+<tr><th scope="row">Head per household at full collection</th><td><bdi>3.8</bdi></td></tr>
+</tbody></table>
+</details>
+<details class="chart-sheet">
+<summary>Sheep</summary>
+<figure><img src="research/charts/biogas_2_sheep_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+<figcaption><a href="research/charts/biogas_2_sheep_ar_16x9.png">Open the original Arabic chart · Sheep</a></figcaption></figure>
+<table><caption>Sheep</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th></tr></thead><tbody>
+<tr><th scope="row">Livestock (million head)</th><td><bdi>194.6</bdi></td></tr>
+<tr><th scope="row">Fresh manure (million tonnes/year)</th><td><bdi>71.0</bdi></td></tr>
+<tr><th scope="row">Theoretical biogas (billion m³/year)</th><td><bdi>3.55</bdi></td></tr>
+<tr><th scope="row">Methane in theoretical biogas (billion m³/year)</th><td><bdi>2.13</bdi></td></tr>
+<tr><th scope="row">Biogas at 30% collection (billion m³/year)</th><td><bdi>1.07</bdi></td></tr>
+<tr><th scope="row">Households at full collection (millions)</th><td><bdi>6.5</bdi></td></tr>
+<tr><th scope="row">Households at 30% collection (millions)</th><td><bdi>1.9</bdi></td></tr>
+<tr><th scope="row">Share of regional biogas potential</th><td><bdi>24%</bdi></td></tr>
+<tr><th scope="row">Fresh manure per head (kg/day)</th><td><bdi>1</bdi></td></tr>
+<tr><th scope="row">Biogas yield (m³/kg of fresh manure)</th><td><bdi>0.050</bdi></td></tr>
+<tr><th scope="row">Head per household at full collection</th><td><bdi>30</bdi></td></tr>
+</tbody></table>
+</details>
+<details class="chart-sheet">
+<summary>Goats</summary>
+<figure><img src="research/charts/biogas_3_goats_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+<figcaption><a href="research/charts/biogas_3_goats_ar_16x9.png">Open the original Arabic chart · Goats</a></figcaption></figure>
+<table><caption>Goats</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th></tr></thead><tbody>
+<tr><th scope="row">Livestock (million head)</th><td><bdi>95.2</bdi></td></tr>
+<tr><th scope="row">Fresh manure (million tonnes/year)</th><td><bdi>34.8</bdi></td></tr>
+<tr><th scope="row">Theoretical biogas (billion m³/year)</th><td><bdi>1.74</bdi></td></tr>
+<tr><th scope="row">Methane in theoretical biogas (billion m³/year)</th><td><bdi>1.04</bdi></td></tr>
+<tr><th scope="row">Biogas at 30% collection (billion m³/year)</th><td><bdi>0.52</bdi></td></tr>
+<tr><th scope="row">Households at full collection (millions)</th><td><bdi>3.2</bdi></td></tr>
+<tr><th scope="row">Households at 30% collection (millions)</th><td><bdi>1.0</bdi></td></tr>
+<tr><th scope="row">Share of regional biogas potential</th><td><bdi>12%</bdi></td></tr>
+<tr><th scope="row">Fresh manure per head (kg/day)</th><td><bdi>1</bdi></td></tr>
+<tr><th scope="row">Biogas yield (m³/kg of fresh manure)</th><td><bdi>0.050</bdi></td></tr>
+<tr><th scope="row">Head per household at full collection</th><td><bdi>30</bdi></td></tr>
+</tbody></table>
+</details>
+<details class="chart-sheet">
+<summary>Camels</summary>
+<figure><img src="research/charts/biogas_4_camels_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+<figcaption><a href="research/charts/biogas_4_camels_ar_16x9.png">Open the original Arabic chart · Camels</a></figcaption></figure>
+<table><caption>Camels</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th></tr></thead><tbody>
+<tr><th scope="row">Livestock (million head)</th><td><bdi>19.2</bdi></td></tr>
+<tr><th scope="row">Fresh manure (million tonnes/year)</th><td><bdi>35.1</bdi></td></tr>
+<tr><th scope="row">Theoretical biogas (billion m³/year)</th><td><bdi>1.40</bdi></td></tr>
+<tr><th scope="row">Methane in theoretical biogas (billion m³/year)</th><td><bdi>0.84</bdi></td></tr>
+<tr><th scope="row">Biogas at 30% collection (billion m³/year)</th><td><bdi>0.42</bdi></td></tr>
+<tr><th scope="row">Households at full collection (millions)</th><td><bdi>2.6</bdi></td></tr>
+<tr><th scope="row">Households at 30% collection (millions)</th><td><bdi>0.8</bdi></td></tr>
+<tr><th scope="row">Share of regional biogas potential</th><td><bdi>10%</bdi></td></tr>
+<tr><th scope="row">Fresh manure per head (kg/day)</th><td><bdi>5</bdi></td></tr>
+<tr><th scope="row">Biogas yield (m³/kg of fresh manure)</th><td><bdi>0.040</bdi></td></tr>
+<tr><th scope="row">Head per household at full collection</th><td><bdi>7.5</bdi></td></tr>
+</tbody></table>
+</details>
+</section>
+
+  </main>
 
   <footer>
-    <span>Source: FAOSTAT 2024 livestock numbers · estimates assume 30% of manure is collected and 1.5 m³ of biogas per household per day · narration generated with VoiceStudio</span>
+    <span>The supplied charts attribute livestock counts to FAOSTAT 2024. Manure, gas and cooking equivalents are model estimates. · narration generated with VoiceStudio</span>
     <span class="credit">Made by: Mohammed Anwar (m7nwar)</span>
   </footer>
 </div>
@@ -328,7 +468,7 @@ const CHAPTERS = [
     cam: { pos: [12.5, 4.6, 10.5], target: [8.8, 0.6, 0] } },
   { start: 7, end: 14, short: "Collection", title: "Collecting the manure",
     body: `Manure is gathered from the pens and taken to the mixing tank. We assume only ${N.pct}% can be collected, because many animals graze on open range.`,
-    stat: `${N.manure} million tonnes`, sub: "of manure a year",
+    stat: `${N.manure} million tonnes`, sub: "of manure produced each year, before collection",
     cam: { pos: [8.2, 4.4, 9.5], target: [6.0, 0.4, 0.6] } },
   { start: 14, end: 20, short: "Mixing", title: "Mixing with water",
     body: "The manure is mixed 1 to 1 with water in the inlet tank until it runs like a liquid, then the slurry flows down a pipe into the digester.",
@@ -827,9 +967,9 @@ function renderCaption(i) {
   if (c.summary) {
     ex.innerHTML = `<div class="summary">
       <div><b>${N.heads}</b><span>million head of livestock</span></div>
-      <div><b>${N.manure}</b><span>million tonnes of manure a year</span></div>
-      <div><b>${N.gas}</b><span>billion m³ of biogas a year</span></div>
-      <div><b>${N.ch4}</b><span>billion m³ of methane a year</span></div>
+      <div><b>${N.manure}</b><span>million tonnes of manure produced each year, before collection</span></div>
+      <div><b>${N.gas}</b><span>billion m³ biogas/year at full collection</span></div>
+      <div><b>${N.ch4}</b><span>billion m³ methane/year at full collection</span></div>
       <div class="wide"><b>${N.hhReal} million homes</b><span>could cook with biogas if ${N.pct}% of manure is collected · ${N.hhFull} million if all of it were</span></div>
     </div>`;
   } else {

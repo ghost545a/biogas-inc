@@ -228,24 +228,13 @@ body::before {
 }
 .lang a[aria-current="page"] { background: var(--accent); color: var(--accent-ink); }
 .lang a:focus-visible, .brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-/* Coming soon: said once, next to the heading; the two parts as a plain list. */
-.soon { display: grid; gap: 10px; padding-block: 22px 6px; }
-.soon-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-.soon h2 { font-family: var(--font-display); font-size: 24px; margin: 0; }
-.soon > p { margin: 0; color: var(--ink-2); max-width: 65ch; }
-.badge { font-size: 13px; font-weight: 600; color: var(--accent); }
-.soon-list { list-style: none; margin: 4px 0 0; padding: 0; display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
-.soon-list li { padding-block: 12px; border-top: 1px solid var(--line); min-width: 0; }
-.soon-list h3 { margin: 0 0 2px; font-family: var(--font-display); font-size: 17px; }
-.soon-list p { margin: 0; color: var(--ink-2); }
-@media (max-width: 640px) { .soon-list { grid-template-columns: 1fr; } }
 /* Phone-only: comfortable touch targets (nothing here applies on a PC-width screen). */
 @media (max-width: 600px) {
   .lang a { padding: 8px 16px; }
   #scrub { height: 32px; }
 }
 </style>
+<link rel="stylesheet" href="research.css">
 </head>
 <body>
 <nav class="topbar" dir="rtl" aria-label="BioGas Inc.">
@@ -259,6 +248,7 @@ body::before {
   <header>
     <div class="kicker">الغاز الحيوي من روث المواشي · 22 دولة عربية</div>
     <h1>من الروث إلى نار المطبخ</h1>
+    <a class="research-jump" href="#research">اطّلع على الدراسة ورسوم الثروة الحيوانية</a>
   </header>
 
   <div class="stage-wrap">
@@ -284,17 +274,167 @@ body::before {
 
   <ol class="steps" id="steps"></ol>
 
-  <section class="soon" id="how-to" aria-labelledby="soon-h">
-    <div class="soon-head"><h2 id="soon-h">طريقة البناء والمنهجية</h2><span class="badge">قريبًا</span></div>
-    <p>دليل عملي لبناء هاضم منزلي، وشرح طريقة حساب كل رقم في هذه الصفحة.</p>
-    <ul class="soon-list">
-      <li><h3>كيف تبني هاضمًا منزليًا</h3><p>المواد والحجم وخطوات البناء والسلامة.</p></li>
-      <li><h3>المنهجية</h3><p>مصادر البيانات والافتراضات والحسابات وراء الأرقام.</p></li>
-    </ul>
-  </section>
+  <main class="research" id="how-to" aria-labelledby="research">
+    <h2 id="research">الغاز الحيوي المنزلي في اليمن</h2>
+    <nav class="research-nav" aria-label="أقسام الدراسة">
+      <a href="#household">تصميم الهاضم وتكاليفه</a>
+      <a href="#sourcing">أدلة التوريد</a>
+      <a href="#livestock">رسوم الثروة الحيوانية</a>
+      <a href="research/study-ar.html">الدراسة العربية الكاملة</a>
+    </nav>
+<section id="household" aria-labelledby="household-heading">
+  <h3 id="household-heading">الطهي بالغاز الحيوي في مزرعة يمنية</h3>
+  <p>تقترح الدراسة تجربة ميدانية في حضرموت. تبدأ الحسبة بما تستطيع الأسرة توفيره يوميًا، وهو 25 كغ من روث الأبقار الطازج و25 لترًا من الماء. بهذه الوتيرة تحتاج المزرعة سنويًا إلى نحو 9.13 طن من الروث و9.13 م³ من الماء.</p>
+  <h4>من التغذية اليومية إلى وقود الطهي</h4>
+  <p>يبقى مزيج الروث والماء في الهاضم 40–60 يومًا. ويشغل 2–3 م³ من سعة الهاضم الاسمية البالغة 3–4 م³. وتُحدَّد سعة تخزين الغاز بصورة مستقلة وفق أوقات الطهي. عند درجة حرارة التصميم البالغة 35 °م، تستهدف الدراسة إنتاج 40 لترًا من الغاز الحيوي لكل كغ من الروث الطازج. ويتراوح المردود المفترض بين 15 و50 لترًا/كغ، أي بين 0.375 و1.25 م³ يوميًا. وتورد <a href="https://www.iea.org/reports/outlook-for-biogas-and-biomethane-prospects-for-organic-growth/sustainable-supply-potential-and-costs">وكالة الطاقة الدولية</a> تقديرًا منزليًا يقارب 1 م³ يوميًا من 20–30 كغ من الروث.</p>
+  <p><strong>عند تحقيق الإنتاج المستهدف، وهو 1 م³ يوميًا، ينتج الهاضم 365 م³ في السنة.</strong> إذا استخدمت الأسرة 80% من هذا الغاز عوضًا عن وقود كانت ستشتريه، استهلكت 292 م³ سنويًا. وعند نسبة ميثان تبلغ 60%، تعادل طاقة هذا الغاز نحو 136.35 كغ من غاز الأسطوانات، بافتراض تقارب كفاءة الموقدين. تصف نسبة 80% استخدام الغاز بعد إنتاجه، أما نسبة 30% في الرسوم الإقليمية فتخص جمع الروث قبل الهضم.</p>
+  <h4>كم توفّر الأسرة؟</h4>
+  <p>تفترض الحالة الأساسية تكلفة مستقبلية قدرها 400 دولار أمريكي شاملة التركيب، ومصروفات تشغيل نقدية قدرها 25 دولارًا سنويًا، ومياهًا منخفضة التكلفة وعملًا عائليًا دون أجر. ويتحدد الوفر بسعر الكيلوغرام الذي تدفعه الأسرة فعليًا لغاز الأسطوانات. عند سعر 0.65 دولار/كغ، توفّر الأسرة 88.63 دولارًا سنويًا من المشتريات، ويتبقى 63.63 دولارًا بعد مصروفات التشغيل.</p>
+  <table>
+    <caption>مدة الاسترداد البسيطة لمنظومة تكلفتها 400 دولار أمريكي</caption>
+    <thead><tr><th scope="col">سعر غاز الأسطوانات (دولار/كغ)</th><th scope="col">صافي الوفر (دولار/سنة)</th><th scope="col">مدة الاسترداد (سنة)</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">0.30</th><td>15.91</td><td>25.1</td></tr>
+      <tr><th scope="row">0.65</th><td>63.63</td><td>6.3</td></tr>
+      <tr><th scope="row">1.00</th><td>111.35</td><td>3.6</td></tr>
+      <tr><th scope="row">1.50</th><td>179.53</td><td>2.2</td></tr>
+    </tbody>
+  </table>
+  <p>عند سعر 0.65 دولار/كغ، يستغرق استرداد تكلفة النموذج الأولي المقدّرة بين 550 و900 دولار مدة 8.6–14.1 سنة. وللمنظومة التي تكلف 400 دولار، يبلغ صافي القيمة الحالية سالب 9 دولارات على مدى عشر سنوات بمعدل خصم حقيقي قدره 10%. وإذا انخفض المردود إلى 25 لترًا/كغ، امتدت مدة الاسترداد البسيطة إلى 13.2 سنة. أما إذا تحقق الإنتاج المستهدف وارتفعت مصروفات التشغيل إلى 70 دولارًا سنويًا فتصبح المدة 21.5 سنة. وتستبعد الحسبة إيرادات ناتج الهضم والتمويل والاستبدالات الرئيسية.</p>
+  <h4 id="sourcing">أدلة التوريد وحدود الأسعار</h4>
+  <p>يوثّق <a href="https://drc.ngo/en/news/yemen-piloting-biogas-as-a-source-of-clean-energy-and-fertilizer-in-partnership-with-yemini-social-enterprise/">إعلان المجلس الدنماركي للاجئين لعام 2023</a> تجربة يمنية بالشراكة مع <a href="https://biotreasure.co/contact-us/">شركة الكنز الحيوي في المكلا</a>، وهي جهة محلية للاستفسار عن التركيب والصيانة. ويعرض <a href="https://artplast-yemen.com/en/product-2/">دليل آرت بلاست</a> تجهيزات لنقل السوائل. أما الأجزاء التي يلامسها الغاز فتتطلب توثيق صلاحيتها للغاز الحيوي.</p>
+  <ul>
+    <li><strong>تكاليف تاريخية.</strong> أورد <a href="https://www.renewablematter.eu/en/fighting-cholera-with-waste">تقرير عن اليمن عام 2019</a> تكلفة تصل إلى 300 دولار لهاضم منزلي. وذكر <a href="https://www.isdb.org/sites/default/files/media/documents/2024-11/Mapping%20affordable%20and%20tranferrable%20climate-smart.pdf">تقييم لمنظومات مصر عام 2024</a> نطاقًا من 800 إلى 1,500 دولار للمنظومة المنزلية.</li>
+    <li><strong>أسعار معلنة.</strong> نقلت الدراسة سعرًا قدره 60–80 دولارًا <a href="https://wholesaler.alibaba.com/product-detail/PUXIN-biogas-storage-bag-2m3_263927194.html">لكيس تخزين غاز من PUXIN بسعة 2 م³</a>، بحد أدنى قطعتين، قبل الشحن.</li>
+    <li><strong>مخصّصات وتقديرات.</strong> رصدت الدراسة 15–35 دولارًا لشراء موقد. وبلغ مجموع التقدير الهندسي لبنود المنظومة 425.50–793.50 دولارًا شاملًا احتياطيًا قدره 15%. وتتداخل مخصّصات شراء المكوّنات مع بنود هذا التقدير.</li>
+  </ul>
+  <p>لم توثّق الدراسة عرض سعر مؤرّخًا يشمل التسليم والتركيب في مزرعة يمنية محددة. وتقترح قبل التوسع التحقق من تكلفة المياه في موسم الجفاف، ووزن الروث، وقياس إنتاج الغاز واستهلاك الموقد كلّ على حدة، ومقارنة مشتريات الأسرة الفعلية من غاز الأسطوانات. ويراجع فني مؤهل تجهيزات تخزين الغاز والتهوية والحماية من ارتفاع الضغط.</p>
+  <p><a href="research/study-ar.html" hreflang="ar">قراءة الدراسة العربية كاملة</a> · <a href="research/BioYemen_Feasibility_Study_AR.md" download>تنزيل الدراسة بصيغة Markdown</a></p>
+</section>
+
+<section id="livestock" aria-labelledby="livestock-heading">
+<h3 id="livestock-heading">إمكانات الغاز الحيوي في 22 دولة عربية</h3>
+<p>تنسب الرسوم أعداد المواشي إلى FAOSTAT 2024، وتشمل فئة الأبقار الجاموس. وتعود بيانات فلسطين في الجدول الأساسي إلى 2022. كميات الروث والغاز والطاقة وأعداد الأسر المستفيدة تقديرات حسابية.</p>
+<p>يفترض الحد النظري جمع كامل الروث الطازج على مدار 365 يومًا، ويأخذ سيناريو جمع 30% ثلاثة أعشار الكمية. ويفترض كلاهما أن نسبة الميثان 60% وأن الأسرة تحتاج إلى 1.5 م³ من الغاز الحيوي يوميًا للطهي. أما دراسة الأسرة في اليمن فتطبّق نسبة الاستخدام البالغة 80% على الغاز الذي ينتجه هاضم منزلي واحد بالفعل.</p>
+<p>إعداد الرسوم · <bdi lang="en">Mohammed Anwar (m7nwar)</bdi></p>
+<details class="chart-sheet" open>
+<summary>إجمالي المواشي</summary>
+<figure><img src="research/charts/biogas_0_total_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+<figcaption><a href="research/charts/biogas_0_total_ar_16x9.png">فتح الرسم الأصلي بالحجم الكامل · إجمالي المواشي</a></figcaption></figure>
+<table><caption>إجمالي المواشي</caption><thead><tr><th scope="col">المؤشر</th><th scope="col">القيمة</th></tr></thead><tbody>
+<tr><th scope="row">المواشي (مليون رأس)</th><td><bdi>363.0</bdi></td></tr>
+<tr><th scope="row">الروث الطازج (مليون طن/سنة)</th><td><bdi>337.6</bdi></td></tr>
+<tr><th scope="row">الغاز الحيوي النظري (مليار م³/سنة)</th><td><bdi>14.6</bdi></td></tr>
+<tr><th scope="row">الميثان في الغاز النظري (مليار م³/سنة)</th><td><bdi>8.7</bdi></td></tr>
+<tr><th scope="row">الغاز الحيوي عند جمع 30% (مليار م³/سنة)</th><td><bdi>4.37</bdi></td></tr>
+<tr><th scope="row">الأسر عند جمع كامل الروث (مليون أسرة)</th><td><bdi>26.6</bdi></td></tr>
+<tr><th scope="row">الأسر عند جمع 30% (مليون أسرة)</th><td><bdi>8.0</bdi></td></tr>
+<tr><th scope="row">الطاقة الحرارية عند جمع كامل الروث (تيراواط ساعة/سنة)</th><td><bdi>87</bdi></td></tr>
+<tr><th scope="row">مكافئ غاز البترول المسال عند جمع 30% (مليون أسطوانة سعة 12.5 كغ/سنة)</th><td><bdi>163</bdi></td></tr>
+</tbody></table><table><caption>حصة كل نوع من الغاز الحيوي النظري</caption><thead><tr><th scope="col">النوع</th><th scope="col">الحصة</th></tr></thead><tbody>
+<tr><th scope="row">الأبقار</th><td><bdi>54%</bdi></td></tr>
+<tr><th scope="row">الأغنام</th><td><bdi>24%</bdi></td></tr>
+<tr><th scope="row">الماعز</th><td><bdi>12%</bdi></td></tr>
+<tr><th scope="row">الإبل</th><td><bdi>10%</bdi></td></tr>
+</tbody></table><p>حُسب مكافئ الأسطوانات على أساس 21.5 ميغاجول لكل م³ من الغاز الحيوي و46 ميغاجول لكل كغ من غاز البترول المسال. قُرّبت كل نتيجة في الجداول على حدة.</p>
+</details>
+<details class="chart-sheet">
+<summary>اليمن</summary>
+<figure><img src="research/charts/biogas_yemen_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+<figcaption><a href="research/charts/biogas_yemen_ar_16x9.png">فتح الرسم الأصلي بالحجم الكامل · اليمن</a></figcaption></figure>
+<table><caption>اليمن</caption><thead><tr><th scope="col">المؤشر</th><th scope="col">القيمة</th></tr></thead><tbody>
+<tr><th scope="row">المواشي (مليون رأس)</th><td><bdi>23.6</bdi></td></tr>
+<tr><th scope="row">الروث الطازج (مليون طن/سنة)</th><td><bdi>15.8</bdi></td></tr>
+<tr><th scope="row">الغاز الحيوي النظري (مليون م³/سنة)</th><td><bdi>708</bdi></td></tr>
+<tr><th scope="row">الميثان في الغاز النظري (مليون م³/سنة)</th><td><bdi>425</bdi></td></tr>
+<tr><th scope="row">الغاز الحيوي عند جمع 30% (مليون م³/سنة)</th><td><bdi>212</bdi></td></tr>
+<tr><th scope="row">الأسر عند جمع كامل الروث (مليون أسرة)</th><td><bdi>1.29</bdi></td></tr>
+<tr><th scope="row">الأسر عند جمع 30% (ألف أسرة)</th><td><bdi>388</bdi></td></tr>
+</tbody></table><table><caption>التفصيل حسب النوع في اليمن</caption><thead><tr><th scope="col">النوع</th><th scope="col">مليون رأس</th><th scope="col">ألف أسرة عند جمع 30%</th></tr></thead><tbody>
+<tr><th scope="row">الأبقار</th><td><bdi>1.97</bdi></td><td><bdi>158</bdi></td></tr>
+<tr><th scope="row">الأغنام</th><td><bdi>10.80</bdi></td><td><bdi>108</bdi></td></tr>
+<tr><th scope="row">الماعز</th><td><bdi>10.37</bdi></td><td><bdi>104</bdi></td></tr>
+<tr><th scope="row">الإبل</th><td><bdi>0.46</bdi></td><td><bdi>18</bdi></td></tr>
+</tbody></table>
+</details>
+<details class="chart-sheet">
+<summary>الأبقار</summary>
+<figure><img src="research/charts/biogas_1_cattle_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+<figcaption><a href="research/charts/biogas_1_cattle_ar_16x9.png">فتح الرسم الأصلي بالحجم الكامل · الأبقار</a></figcaption></figure>
+<table><caption>الأبقار</caption><thead><tr><th scope="col">المؤشر</th><th scope="col">القيمة</th></tr></thead><tbody>
+<tr><th scope="row">المواشي (مليون رأس)</th><td><bdi>53.9</bdi></td></tr>
+<tr><th scope="row">الروث الطازج (مليون طن/سنة)</th><td><bdi>196.7</bdi></td></tr>
+<tr><th scope="row">الغاز الحيوي النظري (مليار م³/سنة)</th><td><bdi>7.87</bdi></td></tr>
+<tr><th scope="row">الميثان في الغاز النظري (مليار م³/سنة)</th><td><bdi>4.72</bdi></td></tr>
+<tr><th scope="row">الغاز الحيوي عند جمع 30% (مليار م³/سنة)</th><td><bdi>2.36</bdi></td></tr>
+<tr><th scope="row">الأسر عند جمع كامل الروث (مليون أسرة)</th><td><bdi>14.4</bdi></td></tr>
+<tr><th scope="row">الأسر عند جمع 30% (مليون أسرة)</th><td><bdi>4.3</bdi></td></tr>
+<tr><th scope="row">الحصة من إمكانات الغاز الحيوي في الدول العربية</th><td><bdi>54%</bdi></td></tr>
+<tr><th scope="row">الروث الطازج للرأس (كغ/يوم)</th><td><bdi>10</bdi></td></tr>
+<tr><th scope="row">مردود الغاز الحيوي (م³/كغ روث طازج)</th><td><bdi>0.040</bdi></td></tr>
+<tr><th scope="row">عدد الرؤوس اللازم للأسرة عند جمع كامل الروث</th><td><bdi>3.8</bdi></td></tr>
+</tbody></table>
+</details>
+<details class="chart-sheet">
+<summary>الأغنام</summary>
+<figure><img src="research/charts/biogas_2_sheep_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+<figcaption><a href="research/charts/biogas_2_sheep_ar_16x9.png">فتح الرسم الأصلي بالحجم الكامل · الأغنام</a></figcaption></figure>
+<table><caption>الأغنام</caption><thead><tr><th scope="col">المؤشر</th><th scope="col">القيمة</th></tr></thead><tbody>
+<tr><th scope="row">المواشي (مليون رأس)</th><td><bdi>194.6</bdi></td></tr>
+<tr><th scope="row">الروث الطازج (مليون طن/سنة)</th><td><bdi>71.0</bdi></td></tr>
+<tr><th scope="row">الغاز الحيوي النظري (مليار م³/سنة)</th><td><bdi>3.55</bdi></td></tr>
+<tr><th scope="row">الميثان في الغاز النظري (مليار م³/سنة)</th><td><bdi>2.13</bdi></td></tr>
+<tr><th scope="row">الغاز الحيوي عند جمع 30% (مليار م³/سنة)</th><td><bdi>1.07</bdi></td></tr>
+<tr><th scope="row">الأسر عند جمع كامل الروث (مليون أسرة)</th><td><bdi>6.5</bdi></td></tr>
+<tr><th scope="row">الأسر عند جمع 30% (مليون أسرة)</th><td><bdi>1.9</bdi></td></tr>
+<tr><th scope="row">الحصة من إمكانات الغاز الحيوي في الدول العربية</th><td><bdi>24%</bdi></td></tr>
+<tr><th scope="row">الروث الطازج للرأس (كغ/يوم)</th><td><bdi>1</bdi></td></tr>
+<tr><th scope="row">مردود الغاز الحيوي (م³/كغ روث طازج)</th><td><bdi>0.050</bdi></td></tr>
+<tr><th scope="row">عدد الرؤوس اللازم للأسرة عند جمع كامل الروث</th><td><bdi>30</bdi></td></tr>
+</tbody></table>
+</details>
+<details class="chart-sheet">
+<summary>الماعز</summary>
+<figure><img src="research/charts/biogas_3_goats_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+<figcaption><a href="research/charts/biogas_3_goats_ar_16x9.png">فتح الرسم الأصلي بالحجم الكامل · الماعز</a></figcaption></figure>
+<table><caption>الماعز</caption><thead><tr><th scope="col">المؤشر</th><th scope="col">القيمة</th></tr></thead><tbody>
+<tr><th scope="row">المواشي (مليون رأس)</th><td><bdi>95.2</bdi></td></tr>
+<tr><th scope="row">الروث الطازج (مليون طن/سنة)</th><td><bdi>34.8</bdi></td></tr>
+<tr><th scope="row">الغاز الحيوي النظري (مليار م³/سنة)</th><td><bdi>1.74</bdi></td></tr>
+<tr><th scope="row">الميثان في الغاز النظري (مليار م³/سنة)</th><td><bdi>1.04</bdi></td></tr>
+<tr><th scope="row">الغاز الحيوي عند جمع 30% (مليار م³/سنة)</th><td><bdi>0.52</bdi></td></tr>
+<tr><th scope="row">الأسر عند جمع كامل الروث (مليون أسرة)</th><td><bdi>3.2</bdi></td></tr>
+<tr><th scope="row">الأسر عند جمع 30% (مليون أسرة)</th><td><bdi>1.0</bdi></td></tr>
+<tr><th scope="row">الحصة من إمكانات الغاز الحيوي في الدول العربية</th><td><bdi>12%</bdi></td></tr>
+<tr><th scope="row">الروث الطازج للرأس (كغ/يوم)</th><td><bdi>1</bdi></td></tr>
+<tr><th scope="row">مردود الغاز الحيوي (م³/كغ روث طازج)</th><td><bdi>0.050</bdi></td></tr>
+<tr><th scope="row">عدد الرؤوس اللازم للأسرة عند جمع كامل الروث</th><td><bdi>30</bdi></td></tr>
+</tbody></table>
+</details>
+<details class="chart-sheet">
+<summary>الإبل</summary>
+<figure><img src="research/charts/biogas_4_camels_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+<figcaption><a href="research/charts/biogas_4_camels_ar_16x9.png">فتح الرسم الأصلي بالحجم الكامل · الإبل</a></figcaption></figure>
+<table><caption>الإبل</caption><thead><tr><th scope="col">المؤشر</th><th scope="col">القيمة</th></tr></thead><tbody>
+<tr><th scope="row">المواشي (مليون رأس)</th><td><bdi>19.2</bdi></td></tr>
+<tr><th scope="row">الروث الطازج (مليون طن/سنة)</th><td><bdi>35.1</bdi></td></tr>
+<tr><th scope="row">الغاز الحيوي النظري (مليار م³/سنة)</th><td><bdi>1.40</bdi></td></tr>
+<tr><th scope="row">الميثان في الغاز النظري (مليار م³/سنة)</th><td><bdi>0.84</bdi></td></tr>
+<tr><th scope="row">الغاز الحيوي عند جمع 30% (مليار م³/سنة)</th><td><bdi>0.42</bdi></td></tr>
+<tr><th scope="row">الأسر عند جمع كامل الروث (مليون أسرة)</th><td><bdi>2.6</bdi></td></tr>
+<tr><th scope="row">الأسر عند جمع 30% (مليون أسرة)</th><td><bdi>0.8</bdi></td></tr>
+<tr><th scope="row">الحصة من إمكانات الغاز الحيوي في الدول العربية</th><td><bdi>10%</bdi></td></tr>
+<tr><th scope="row">الروث الطازج للرأس (كغ/يوم)</th><td><bdi>5</bdi></td></tr>
+<tr><th scope="row">مردود الغاز الحيوي (م³/كغ روث طازج)</th><td><bdi>0.040</bdi></td></tr>
+<tr><th scope="row">عدد الرؤوس اللازم للأسرة عند جمع كامل الروث</th><td><bdi>7.5</bdi></td></tr>
+</tbody></table>
+</details>
+</section>
+
+  </main>
 
   <footer>
-    <span>المصدر: FAOSTAT 2024 لأعداد المواشي · الحسابات تقديرية (جمع 30% من الروث، 1.5 م³ غاز للأسرة يوميًا) · التعليق الصوتي مولَّد بـ VoiceStudio</span>
+    <span>تنسب الرسوم أعداد المواشي إلى FAOSTAT 2024. كميات الروث والغاز وما يعادلها للطهي تقديرات حسابية. · التعليق الصوتي مولَّد بـ VoiceStudio</span>
     <span class="credit">Made by: Mohammed Anwar (m7nwar)</span>
   </footer>
 </div>
@@ -328,7 +468,7 @@ const CHAPTERS = [
     cam: { pos: [12.5, 4.6, 10.5], target: [8.8, 0.6, 0] } },
   { start: 7, end: 14, short: "جمع الروث", title: "جمع الروث",
     body: `يُجمع الروث من الحظائر وينقل إلى حوض الخلط. نفترض أنه يمكن جمع ${N.pct}% منه فقط، لأن كثيرًا من المواشي ترعى في المراعي المفتوحة.`,
-    stat: `${N.manure} مليون طن`, sub: "روث سنويًا",
+    stat: `${N.manure} مليون طن`, sub: "روث سنويًا قبل الجمع",
     cam: { pos: [8.2, 4.4, 9.5], target: [6.0, 0.4, 0.6] } },
   { start: 14, end: 20, short: "الخلط", title: "الخلط بالماء",
     body: "يُخلط الروث بالماء بنسبة 1 إلى 1 في حوض الإدخال حتى يصبح سائلًا، ثم ينساب الخليط عبر أنبوب إلى الهاضم.",
@@ -827,9 +967,9 @@ function renderCaption(i) {
   if (c.summary) {
     ex.innerHTML = `<div class="summary">
       <div><b>${N.heads}</b><span>مليون رأس من المواشي</span></div>
-      <div><b>${N.manure}</b><span>مليون طن روث سنويًا</span></div>
-      <div><b>${N.gas}</b><span>مليار م³ غاز حيوي سنويًا</span></div>
-      <div><b>${N.ch4}</b><span>مليار م³ ميثان سنويًا</span></div>
+      <div><b>${N.manure}</b><span>مليون طن روث سنويًا قبل الجمع</span></div>
+      <div><b>${N.gas}</b><span>مليار م³ غاز حيوي سنويًا عند جمع كل الروث</span></div>
+      <div><b>${N.ch4}</b><span>مليار م³ ميثان سنويًا عند جمع كل الروث</span></div>
       <div class="wide"><b>${N.hhReal} مليون أسرة</b><span>تطهو بالغاز الحيوي عند جمع ${N.pct}% من الروث · ${N.hhFull} مليون لو جُمع كله</span></div>
     </div>`;
   } else {
