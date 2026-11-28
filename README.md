@@ -8,7 +8,12 @@ a Yemen household feasibility summary, sourcing evidence and six livestock chart
 with their values in accessible tables. Read the full study in
 [English](research/study-en.html) or [Arabic](research/study-ar.html), or download
 the original [English Markdown](research/BioYemen_Feasibility_Study.md) or
-[Arabic Markdown](research/BioYemen_Feasibility_Study_AR.md).
+[Arabic Markdown](research/BioYemen_Feasibility_Study_AR.md), or as PDF in
+[English](research/pdf/BioYemen_Feasibility_Study_EN.pdf) or
+[Arabic](research/pdf/BioYemen_Feasibility_Study_AR.pdf).
+
+A step-by-step building guide covers tank, flexible-bag and fixed-dome digesters,
+with photos, videos and sources, in [English](steps.html) and [Arabic](steps-ar.html).
 
 The study was revised on 28 November 2026 after a post-publication review: it now separates verified sources from unverified inputs, shows how payback depends on gas yield and LPG price per kg, and presents the regional figures as an upper-bound technical potential.
 

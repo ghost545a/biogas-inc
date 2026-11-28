@@ -1,0 +1,156 @@
+{
+ "feed": {
+  "file": "feed.jpg",
+  "title": "File:Bio-gas in Tanzania (9297).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bio-gas_in_Tanzania_(9297).jpg",
+  "width": 960,
+  "height": 640,
+  "artist": "Russell Watkins/Department for International Development",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "desc": "Sanderson is a farmer from Kenya who's now managing a large farm outside Arusha in Tanzania. The farm he runs has 300 cattle producing milk, as well as a coffee plantation and other crops. His farm had a bio-gas system installed last year, so now all the manure waste from the cows goes into producin"
+ },
+ "site": {
+  "file": "site.jpg",
+  "title": "File:Digging the hole for the digester (4834074716).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Digging_the_hole_for_the_digester_(4834074716).jpg",
+  "width": 960,
+  "height": 720,
+  "artist": "SuSanA Secretariat",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "desc": "(Photo: Jun - Jul 2010, GTZ/WSIP (N. Khawaja), Navin Well-Field Area, Herat)"
+ },
+ "tank": {
+  "file": "tank.jpg",
+  "title": "File:Plastic tank digester.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Plastic_tank_digester.jpg",
+  "width": 540,
+  "height": 960,
+  "artist": "BiogasME",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "desc": "This is an illustration of a plastic tank digester with its main components."
+ },
+ "tube": {
+  "file": "tube.jpg",
+  "title": "File:Plastic tube digester.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Plastic_tube_digester.jpg",
+  "width": 960,
+  "height": 540,
+  "artist": "BiogasME",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "desc": "This is an illustration of a plastic tube digester with its main components."
+ },
+ "drum": {
+  "file": "drum.jpg",
+  "title": "File:Floating drum digester.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Floating_drum_digester.jpg",
+  "width": 960,
+  "height": 540,
+  "artist": "BiogasME",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "desc": "This is an illustration of a floating drum digester and its main components."
+ },
+ "bag": {
+  "file": "bag.jpg",
+  "title": "File:Bag digester - 2 (4644386374).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bag_digester_-_2_(4644386374).jpg",
+  "width": 960,
+  "height": 720,
+  "artist": "SuSanA Secretariat",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "desc": "Farmer family outside Nairobi, Kenya, with their new biogas system. The bag digester was delivered by the local biogas company Pioneer. Photo by Sören Säf, May 2010"
+ },
+ "dome": {
+  "file": "dome.jpg",
+  "title": "File:Digester dome construction (4833631219).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Digester_dome_construction_(4833631219).jpg",
+  "width": 960,
+  "height": 720,
+  "artist": "SuSanA Secretariat",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "desc": "Digester dome under construction with opening of outlet pipe to expansion chamber visible inside. (Photo: Jun - Jul 2010, GTZ/WSIP (N. Khawaja), Navin Well-Field Area, Herat)"
+ },
+ "inlet": {
+  "file": "inlet.jpg",
+  "title": "File:Mixing at the inlet (6593867591).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mixing_at_the_inlet_(6593867591).jpg",
+  "width": 960,
+  "height": 720,
+  "artist": "SuSanA Secretariat",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "desc": "Photo taken by P. Feiereisen on 23 November 2011 at the office of WASAZA/Borda in Lusaka, Zambia."
+ },
+ "gasline": {
+  "file": "gasline.jpg",
+  "title": "File:Biogas set up in detail (5363273033).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Biogas_set_up_in_detail_(5363273033).jpg",
+  "width": 720,
+  "height": 960,
+  "artist": "SuSanA Secretariat",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "desc": "Valve (special quality for gas), gas meter (german brand) , branch into manometer (flexible platic pipe filled with water to measure pressure), one branch to one stove (here in the picture) and one branch to the big stoves with two separate outlets and valves."
+ },
+ "manometer": {
+  "file": "manometer.jpg",
+  "title": "File:Naivasha Biogas kitchen (4427168730).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Naivasha_Biogas_kitchen_(4427168730).jpg",
+  "width": 640,
+  "height": 480,
+  "artist": "SuSanA Secretariat",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "desc": "foto by: C.Rieck, 2009 The kitchen set-up. Right side is the manometer, a water filled transparent hose pipe, that measures the gas pressure in the system. There are two ball valves to regulate the gas/pressure to the biogas gas burner on the left side. A window above the burner is the only ventilat"
+ },
+ "stove": {
+  "file": "stove.jpg",
+  "title": "File:Cooking with biogas stove (14004617377).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cooking_with_biogas_stove_(14004617377).jpg",
+  "width": 960,
+  "height": 720,
+  "artist": "SuSanA Secretariat",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "desc": "Source: M. Wauthelet"
+ },
+ "slurry": {
+  "file": "slurry.jpg",
+  "title": "File:Biomass slurry outlet to lead it directly to the fields (6955946985).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Biomass_slurry_outlet_to_lead_it_directly_to_the_fields_(6955946985).jpg",
+  "width": 720,
+  "height": 960,
+  "artist": "SuSanA Secretariat",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "desc": "Biomass slurry outlet to lead it directly to the fields"
+ },
+ "maintenance": {
+  "file": "maintenance.jpg",
+  "title": "File:Naivasha maintainance of biogas plant (4426405729).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Naivasha_maintainance_of_biogas_plant_(4426405729).jpg",
+  "width": 640,
+  "height": 480,
+  "artist": "SuSanA Secretariat",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "desc": "foto by: C.Rieck, 2009 Inside the digester are plastic residues like bags, condomes and other solid materials. Once in one or two years, the biogas plant must me desludged to remove such non-biodegradable materials."
+ },
+ "portable": {
+  "file": "portable.jpg",
+  "title": "File:Portable Biogas plant.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Portable_Biogas_plant.jpg",
+  "width": 960,
+  "height": 639,
+  "artist": "Kevinsooryan",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "desc": "Portable Biogas plant in use at a Kerala home."
+ }
+}
