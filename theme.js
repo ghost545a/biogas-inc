@@ -17,17 +17,30 @@
   }
 
   applyTheme(preference);
-  document.addEventListener("DOMContentLoaded", () => {
-    const picker = document.getElementById("site-theme");
-    picker.value = root.dataset.theme || "system";
-    picker.closest("label").hidden = false;
-    picker.addEventListener("change", () => {
-      applyTheme(picker.value);
-      try {
-        localStorage.setItem(key, picker.value);
-      } catch {
-        // Without storage, the preference lasts for this page.
+  document.addEventListener("readystatechange", () => {
+    const control = document.getElementById("site-theme");
+    const buttons = control.querySelectorAll("[data-set-theme]");
+
+    function updatePressedState() {
+      const active = root.dataset.theme || "system";
+      for (const button of buttons) {
+        button.setAttribute("aria-pressed", String(button.dataset.setTheme === active));
       }
-    });
-  });
+    }
+
+    updatePressedState();
+    control.hidden = false;
+    for (const button of buttons) {
+      button.addEventListener("click", () => {
+        const theme = button.dataset.setTheme;
+        applyTheme(theme);
+        updatePressedState();
+        try {
+          localStorage.setItem(key, theme);
+        } catch {
+          // Without storage, the preference lasts for this page.
+        }
+      });
+    }
+  }, { once: true });
 })();
