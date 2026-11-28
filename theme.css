@@ -1,0 +1,63 @@
+/* The poster's paper, ink, grid and livestock series colours. */
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#faf6ec, #171614);
+  --surface: light-dark(#fffdf7, #211f1c);
+  --stage: light-dark(#efe5d0, #24211c);
+  --stage-2: light-dark(#faf6ec, #2c2822);
+  --ink: light-dark(#1f1d1a, #f1ede4);
+  --ink-2: light-dark(#5c5850, #b6ae9f);
+  --line: light-dark(#e6dfcf, #3a362f);
+  --accent: light-dark(#2a6f5b, #5fb89a);
+  --accent-ink: light-dark(#fff, #10201a);
+  --flame: light-dark(#2a78d6, #6aa8f0);
+  --poster-cattle: #2a78d6;
+  --poster-sheep: #eb6834;
+  --poster-goats: #1baf7a;
+  --poster-camels: #eda100;
+  --radius: 14px;
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+html { background: var(--bg); }
+.theme-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .45rem .85rem;
+}
+.theme-control {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .45rem;
+  color: var(--ink-2);
+  font-size: .875rem;
+  font-weight: 600;
+}
+.theme-control[hidden] { display: none; }
+.theme-control select {
+  min-block-size: 2.75rem;
+  max-inline-size: 100%;
+  padding: .35rem .6rem;
+  border: 1px solid var(--ink-2);
+  border-radius: .5rem;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+}
+.theme-control select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.poster-rule {
+  display: flex;
+  gap: 2px;
+  inline-size: clamp(6rem, 20vw, 12rem);
+  block-size: 4px;
+  margin-block: .45rem .25rem;
+}
+.poster-rule span { flex: 1; }
+.poster-rule span:nth-child(1), .chart-sheet[data-species="cattle"] { --series: var(--poster-cattle); }
+.poster-rule span:nth-child(2), .chart-sheet[data-species="sheep"] { --series: var(--poster-sheep); }
+.poster-rule span:nth-child(3), .chart-sheet[data-species="goats"] { --series: var(--poster-goats); }
+.poster-rule span:nth-child(4), .chart-sheet[data-species="camels"] { --series: var(--poster-camels); }
+.poster-rule span { background: var(--series); }
+.research .chart-sheet[data-species] { border-inline-start: 4px solid var(--series); }

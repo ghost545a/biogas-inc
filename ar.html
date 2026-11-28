@@ -17,39 +17,16 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;600&family=Readex+Pro:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;600;700&family=Readex+Pro:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js"></script>
 <style>
 /* Layout: one-screen explainer. Header, a 3D diorama stage with the chapter
    caption floating at its reading edge (right, RTL), then playback controls
    and the seven numbered steps of the process. */
 :root {
-  --bg: #faf6ec;          /* page — same cream as the charts and cards */
-  --surface: #fffdf7;     /* caption card, controls */
-  --stage: #efe5d0;       /* sky behind the diorama */
-  --stage-2: #f8f1e3;
-  --ink: #1f1d1a;
-  --ink-2: #5c5850;
-  --line: #e3dac6;
-  --accent: #2a6f5b;      /* biogas green: active step, play button */
-  --accent-ink: #ffffff;
-  --flame: #2a78d6;
-  --font-display: "Readex Pro", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --font-display: "Noto Naskh Arabic", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
   --font-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
-  --radius: 14px;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #171614; --surface: #211f1c; --stage: #24211c; --stage-2: #2c2822;
-    --ink: #f1ede4; --ink-2: #b6ae9f; --line: #3a362f;
-    --accent: #5fb89a; --accent-ink: #10201a; --flame: #6aa8f0;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #171614; --surface: #211f1c; --stage: #24211c; --stage-2: #2c2822;
-  --ink: #f1ede4; --ink-2: #b6ae9f; --line: #3a362f;
-  --accent: #5fb89a; --accent-ink: #10201a; --flame: #6aa8f0;
-  color-scheme: dark;
 }
 html, body { background: var(--bg); color: var(--ink); }
 body {
@@ -239,15 +216,25 @@ body::before {
 <body>
 <nav class="topbar" dir="rtl" aria-label="BioGas Inc.">
   <a class="brand" href="./ar.html"><svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="var(--accent)"/><path d="M16 7c3.5 4.2 6 7.6 6 11a6 6 0 0 1-12 0c0-2.2 1-4.2 2.6-6.1.3 2 1.3 3.3 2.7 3.8C14.6 12.6 15 9.6 16 7z" fill="var(--accent-ink)"/></svg><b dir="ltr">BioGas Inc.</b><span>إعداد محمد أنور</span></a>
+  <div class="theme-tools">
   <div class="lang" role="group" aria-label="Language / اللغة">
     <a href="./index.html" lang="en" hreflang="en">English</a>
     <a href="./ar.html" lang="ar" hreflang="ar" aria-current="page">العربية</a>
+  </div>
+  <label class="theme-control" hidden>المظهر
+    <select id="site-theme">
+      <option value="system">النظام</option>
+      <option value="light">فاتح</option>
+      <option value="dark">داكن</option>
+    </select>
+  </label>
   </div>
 </nav>
 <div class="wrap" dir="rtl" lang="ar">
   <header>
     <div class="kicker">الغاز الحيوي من روث المواشي · 22 دولة عربية</div>
     <h1>من الروث إلى نار المطبخ</h1>
+    <div class="poster-rule" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
     <a class="research-jump" href="#research">اطّلع على الدراسة ورسوم الثروة الحيوانية</a>
   </header>
 
@@ -357,7 +344,7 @@ body::before {
 <tr><th scope="row">الإبل</th><td><bdi>0.46</bdi></td><td><bdi>18</bdi></td></tr>
 </tbody></table>
 </details>
-<details class="chart-sheet">
+<details class="chart-sheet" data-species="cattle">
 <summary>الأبقار</summary>
 <figure><img src="research/charts/biogas_1_cattle_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
 <figcaption><a href="research/charts/biogas_1_cattle_ar_16x9.png">فتح الرسم الأصلي بالحجم الكامل · الأبقار</a></figcaption></figure>
@@ -375,7 +362,7 @@ body::before {
 <tr><th scope="row">عدد الرؤوس اللازم للأسرة عند جمع كامل الروث</th><td><bdi>3.8</bdi></td></tr>
 </tbody></table>
 </details>
-<details class="chart-sheet">
+<details class="chart-sheet" data-species="sheep">
 <summary>الأغنام</summary>
 <figure><img src="research/charts/biogas_2_sheep_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
 <figcaption><a href="research/charts/biogas_2_sheep_ar_16x9.png">فتح الرسم الأصلي بالحجم الكامل · الأغنام</a></figcaption></figure>
@@ -393,7 +380,7 @@ body::before {
 <tr><th scope="row">عدد الرؤوس اللازم للأسرة عند جمع كامل الروث</th><td><bdi>30</bdi></td></tr>
 </tbody></table>
 </details>
-<details class="chart-sheet">
+<details class="chart-sheet" data-species="goats">
 <summary>الماعز</summary>
 <figure><img src="research/charts/biogas_3_goats_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
 <figcaption><a href="research/charts/biogas_3_goats_ar_16x9.png">فتح الرسم الأصلي بالحجم الكامل · الماعز</a></figcaption></figure>
@@ -411,7 +398,7 @@ body::before {
 <tr><th scope="row">عدد الرؤوس اللازم للأسرة عند جمع كامل الروث</th><td><bdi>30</bdi></td></tr>
 </tbody></table>
 </details>
-<details class="chart-sheet">
+<details class="chart-sheet" data-species="camels">
 <summary>الإبل</summary>
 <figure><img src="research/charts/biogas_4_camels_ar_16x9.png" alt="" width="1920" height="1080" loading="lazy" decoding="async">
 <figcaption><a href="research/charts/biogas_4_camels_ar_16x9.png">فتح الرسم الأصلي بالحجم الكامل · الإبل</a></figcaption></figure>
