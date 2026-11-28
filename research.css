@@ -67,3 +67,8 @@
 @media (min-width: 800px) {
   .research { margin-block-start: 1rem; }
 }
+.study-page:lang(en) {
+  --font-display: "Readex Pro", "Segoe UI", Tahoma, sans-serif;
+  font-family: "IBM Plex Sans", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+}
+.study-page .lang a[aria-current="page"] { color: var(--ink); font-weight: 600; }
