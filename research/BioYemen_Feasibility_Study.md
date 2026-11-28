@@ -1,269 +1,322 @@
-# Household cattle-manure biogas for cooking in Yemen
-دراسة الجدوى الفنية والاقتصادية لإنتاج الغاز الحيوي من المخلفات الحيوانية للاستخدام المنزلي في اليمن والوطن العربي
+# Techno-economic feasibility of household cattle-manure biogas for cooking in Yemen: a desk assessment with a regional resource estimate for 22 Arab countries
 
-**Feasibility study · 28 November 2026 · All costs in USD**
+**Mohammed Anwar** · Revised 28 November 2026 after a post-publication review · All costs in USD
 
-## Decision
+## Abstract
 
-**Proceed to a measured farm pilot in Hadhramaut. Commercial feasibility depends on the household’s actual LPG cost, year-round gas use and installed price.** A household that collects 25 kg of fresh manure and can spare 25 L of water each day is a plausible candidate. Proximity to a local installer makes Hadhramaut a practical first choice. The Danish Refugee Council documented its partnership with BioTreasure to pilot household biogas in Yemen in 2023. [DRC pilot announcement](https://drc.ngo/en/news/yemen-piloting-biogas-as-a-source-of-clean-energy-and-fertilizer-in-partnership-with-yemini-social-enterprise/)
+**Objective.** To estimate whether a household anaerobic digester fed with cattle manure can recover its installed cost by displacing purchased liquefied petroleum gas (LPG) in Yemen, and to bound the livestock-manure biogas resource of the 22 Arab League countries.
 
-At the study target of 1 m³/day, 80% utilization delivers the energy equivalent of about **136 kg of LPG a year**. With a future installed price of $400 and $25/year cash operating cost, simple payback is **6.3 years at $0.65/kg LPG** and **25.2 years at $0.30/kg**. At the $550–900 first-prototype budget, the same $0.65/kg case takes **8.6–14.1 years**. A household using mostly gathered wood would need a separate assessment of purchased fuel and time saved.
+**Methods.** A deterministic desk model of one digester receiving 25 kg/day of fresh cattle manure and 25 kg/day of water. Gas yield ranged from 15 to 50 L/kg of fresh manure, with 40 L/kg as the design case. Outputs were annual LPG-equivalent energy, simple payback and 10-year net present value (NPV) at a 10% real discount rate. The calculation used a $400 installed cost, $25/year operating cost and 80% gas utilization, across a grid of LPG prices. The regional estimate applied fixed per-head manure and yield coefficients to FAOSTAT 2024 herd data.
 
-**Price evidence.** The accessible studies contain no dated supplier quotation for a specified system delivered and installed at a named Yemeni site. The tables below distinguish published historical benchmarks, marketplace prices reported in the conversation, purchasing allowances, and engineering estimates. None establishes a final procurement price.
+**Results.**
+- **Design case:** 1.0 m³/day of biogas, equivalent to 136 kg of LPG per year after utilization losses.
+- **Payback:** 6.3 years at $0.65/kg LPG, 3.6 years at $1.00/kg and 25.1 years at $0.30/kg. The 10-year NPV break-even price was $0.66/kg at design yield and $1.06/kg at 25 L/kg.
+- **LPG prices:** the per-kg price could not be established. The cylinder prices found lack traceable sources, and the cylinder net mass is unknown. Depending on the mass assumed (10–20 kg), they correspond to $0.27–1.58/kg, which spans both outcomes.
+- **Regional resource:** the upper-bound technical potential at 30% manure collection was 8.0 million households at 1.5 m³/day each, or 12.0 million at 1.0 m³/day. Sudan, whose herd figures are FAO-imputed, contributed 43% of this potential.
 
-## 1. What the digester produces
+**Conclusions.** Feasibility depends on two inputs that are not yet measured: the price paid per kilogram of LPG and the gas yield achieved in the cool season. A measured pilot is justified to obtain them. Wider deployment and the regional estimate should not be presented as achievable until these inputs are measured.
 
-Microorganisms break down manure in an oxygen-free reactor. Hydrolysis breaks complex material into smaller molecules. Acidogenesis forms organic acids, acetogenesis produces acetate and other methane precursors, and methanogenesis produces methane. Raw biogas also contains CO₂, moisture and potentially toxic, corrosive H₂S. The remaining slurry, called digestate, retains nutrients. [US EPA process and composition](https://www.epa.gov/agstar/how-does-anaerobic-digestion-work)
+---
 
-| Stage | Representative balanced reaction |
+## 1. Introduction
+
+Anaerobic digestion converts organic matter into biogas through four microbial stages: hydrolysis, acidogenesis, acetogenesis and methanogenesis. Raw biogas consists mainly of methane and CO₂, with water vapour and hydrogen sulfide (H₂S). The H₂S is toxic and corrosive. The residual slurry (digestate) retains nutrients [E01]. Household digesters typically produce about 1 m³ of biogas per day. That is enough for two to three hours of cooking from 20–30 kg of animal manure [E02, citing SNV 2019].
+
+In Yemen, a Danish Refugee Council (DRC) pilot with the local social enterprise Bio Treasure tested household biogas for cooking and fertilizer from 2023 [E03]. Bio Treasure is based in Mukalla, Hadhramaut [E12]. No published, site-specific cost-benefit assessment of household digesters in Yemen was found.
+
+This study asks three questions:
+1. Under stated assumptions, what gas output, fuel displacement and payback can one cattle-manure digester achieve?
+2. Which inputs determine whether it is feasible?
+3. What is the upper bound of the manure-biogas resource across the Arab League?
+
+The study is a desk assessment without field data. No reporting guideline specific to techno-economic feasibility studies was identified. Section 2 reports the assumptions, equations and data sources so the results can be reproduced.
+
+## 2. Methods
+
+### 2.1 System boundary
+
+The system covers one household digester, from manure collection to the cooking stove. Digestate use, carbon credits, financing, subsidies, major component replacement and residual value are excluded. Cash flows are constant in real terms and occur at year-end.
+
+### 2.2 Process chemistry
+
+Representative balanced reactions are listed in Table 1. Glucose is used only for illustration. Manure contains non-degradable solids, so these reactions cannot predict gas yield.
+
+**Table 1.** Representative reactions (all equations balance in C, H and O).
+
+| Stage | Reaction |
 |---|---|
 | Cellulose hydrolysis | (C₆H₁₀O₅)ₙ + nH₂O → nC₆H₁₂O₆ |
-| Acidogenesis, acetate pathway | C₆H₁₂O₆ + 2H₂O → 2CH₃COOH + 2CO₂ + 4H₂ |
-| Acetogenesis, propionate pathway | C₃H₆O₂ + 2H₂O → CH₃COOH + CO₂ + 3H₂ |
-| Methane from acetate | CH₃COOH → CH₄ + CO₂ |
-| Methane from hydrogen | CO₂ + 4H₂ → CH₄ + 2H₂O |
-| Idealized net conversion of glucose | C₆H₁₂O₆ → 3CH₄ + 3CO₂ |
-| Combustion at the stove | CH₄ + 2O₂ → CO₂ + 2H₂O + heat |
+| Acidogenesis (acetate pathway) | C₆H₁₂O₆ + 2H₂O → 2CH₃COOH + 2CO₂ + 4H₂ |
+| Acetogenesis (propionate) | C₃H₆O₂ + 2H₂O → CH₃COOH + CO₂ + 3H₂ |
+| Acetoclastic methanogenesis | CH₃COOH → CH₄ + CO₂ |
+| Hydrogenotrophic methanogenesis | CO₂ + 4H₂ → CH₄ + 2H₂O |
+| Idealized net conversion | C₆H₁₂O₆ → 3CH₄ + 3CO₂ |
+| Combustion | CH₄ + 2O₂ → CO₂ + 2H₂O |
 
-Glucose illustrates the chemistry. Manure contains water, minerals and incompletely degradable solids, so the overall equation alone cannot predict gas production.
+### 2.3 Design basis
 
-## 2. Design basis and production range
+**Table 2.** Design assumptions. All are modelling assumptions; none was measured.
 
-| Parameter | Selected value |
-|--------|--------|
-| Fresh manure feed | 25 kg/day |
-| Water feed | 25 kg/day |
-| Total slurry feed | 50 kg/day |
-| Assumed slurry density | 1,000 kg/m³ |
-| Total solids in fresh manure | 15% |
-| Volatile solids fraction of TS | 80% |
-| Hydraulic retention time | 40–60 days |
-| Methane concentration | 60% |
-| Design biogas production | 1 m³/day |
-| Design temperature | 35°C |
-
-These assumptions describe a passive outdoor installation. The original operating targets were pH 6.8–7.2 and 30–37 °C. Daily collection matters more than cattle ownership alone. The IEA gives a household benchmark of roughly 1 m³/day and two to three stove-hours from 20–30 kg of manure under suitable conditions. Seasonal output at a specific farm needs measurement. [IEA household-scale benchmark](https://www.iea.org/reports/outlook-for-biogas-and-biomethane-prospects-for-organic-growth/sustainable-supply-potential-and-costs)
-
-| Scenario | Biogas yield per kg of manure | Production from 25 kg/day |
-|--------|--------|--------|
-| Conservative | 15 L | 375 L/day |
-| Moderate | 25 L | 625 L/day |
-| Design target | 40 L | 1,000 L/day |
-| Optimistic | 50 L | 1,250 L/day |
-
-### Material, reactor and energy calculations
-
-| Quantity | Calculation on the target basis | Result |
-|---|---|---:|
-| Daily slurry feed, Q | (25 kg manure + 25 kg water) / 1,000 kg/m³ | 0.050 m³/day |
-| Total solids, TS | 25 × 0.15 | 3.75 kg/day |
-| Volatile solids, VS | 3.75 × 0.80 | 3.00 kg/day |
-| Diluted solids concentration | 3.75 / 50 | 7.5% by mass |
-| Liquid working volume | Q × hydraulic retention time, 0.050 × 40–60 | 2–3 m³ |
-| Organic loading | 3 kg VS/day / 2–3 m³ | 1.0–1.5 kg VS/(m³·day) |
-| Methane production | 3 kg VS/day × assumed realized yield of 0.20 m³ CH₄/kg VS | 0.60 m³/day |
-| Total biogas | 0.60 / 0.60 methane volume fraction | 1.00 m³/day |
-| Fuel energy | 0.60 × 35.8 MJ/m³ CH₄ / 3.6 MJ/kWh | 5.97 kWh/day |
-| Heat reaching cookware at full use | 5.97 × assumed 55% stove efficiency | 3.28 kWh/day |
-| Burner time at full use | 1.00 m³ / 0.35 m³/h | 2.86 hours/day |
-
-The 3–4 m³ nominal reactor concept includes space beyond the working slurry. Gas storage is a separate sizing decision driven by when the household cooks. The methane energy calculation uses normal-reference gas volume. Metered field volumes need a consistent temperature, pressure and moisture basis.
-
-### Annual balance
-
-At 365 feeding days, the household supplies **9.13 tonnes of fresh manure and 9.13 m³ of dilution water**. The 80% utilization factor allows for gas that does not displace purchased fuel. Apply a separate seasonal production reduction only to the extent it is not already included in that factor.
-
-| Output | Annual quantity |
-|--------|--------|
-| Gross biogas production | 365 m³ |
-| Utilized biogas | 292 m³ |
-| Methane utilized | 175.2 m³ |
-| LPG energy equivalent | 136.35 kg |
-| Equivalent 20 kg LPG refills | 6.82 |
-| Equivalent 12 kg LPG refills | 11.36 |
-| Fuel energy in utilized gas, before stove losses | 1,742 kWh |
-
-LPG equivalent = utilized biogas × methane fraction × methane lower heating value / LPG lower heating value = 292 × 0.60 × 35.8 / 46 ≈ 136.35 kg/year. Actual LPG avoided also depends on the ratio of biogas to LPG stove efficiencies, cooking demand and previous fuel use. Refill counts above illustrate two possible net fill masses.
-
-## 3. Reactor selection and pilot geography
-
-| Criterion | Fixed dome | Floating drum | Flexible | Rigid tank |
-|--------|--------|--------|--------|--------|
-| Low initial cost | 3 | 3 | 5 | 3 |
-| Portability | 1 | 2 | 5 | 4 |
-| Durability | 5 | 4 | 3 | 4 |
-| Maintenance | 4 | 3 | 4 | 4 |
-| Thermal performance | 5 | 3 | 2 | 4 |
-| Commercial scalability | 2 | 3 | 5 | 5 |
-| **Total / 30** | **20** | **18** | **24** | **24** |
-
-Scores are judgmental, equally weighted, and range from 1 to 5. A fixed dome suits a permanent farm with skilled masonry and benefits from ground temperature stability. A tubular membrane suits transport and repeat assembly in warmer areas but needs shade and puncture protection. An insulated rigid vessel merits evaluation for cooler sites. Floating drums add moving parts and maintenance.
-
-| Region | Advantages | Limitations | Preliminary suitability |
-|--------|--------|--------|--------|
-| Hadhramaut | Local biogas expertise, warm areas | Water scarcity | High |
-| Tihama | Warm climate, agriculture | Extreme heat, flooding risks | High |
-| Lahj | Agricultural communities, warm climate | Water availability | High |
-| Ibb | Agricultural activity | Cooler seasonal temperatures | High |
-| Taiz | Agricultural communities, fuel insecurity | Logistics and water access | High |
-| Sana'a highlands | Potentially valuable LPG replacement | Cold winter nights | Moderate |
-| Aden | Procurement and distribution opportunities | Limited urban livestock availability | Moderate |
-
-The regional ratings come from the conversation. Site selection needs actual daily manure collection, dry-season water cost, winter slurry temperatures, flood exposure, service access and household LPG receipts.
-
-## 4. Yemen and Arab-world sourcing
-
-| Market and organization | Proposed inquiry | Source from study |
+| Parameter | Value | Basis |
 |---|---|---|
-| Mukalla, BioTreasure / الكنز الحيوي | Complete local system, installation, maintenance and pilot history | [Official BioTreasure website](https://biotreasure.co/) · [Contact the company](https://biotreasure.co/contact-us/) |
-| Yemen, Middle East Plastic Industries | Water and slurry preparation tanks | [Manufacturer website](https://middleeast-plastic.com/) |
-| Yemen, Al-Kbous Group | Liquid storage products | [Plastics division](https://alkbousgroup.com/sectors/plastics) |
-| Yemen, Art Plast | Liquid pipe, fittings and tanks | [Product catalog](https://artplast-yemen.com/en/product-2/) |
-| Mukalla, Bin Yaqoub | HDPE fabrication and installation | [HDPE services](https://btg-bawazir.com/en/our-services/hdpe-pipes-supplying-installation/) |
-| Aden, Al-Magd | Water and wastewater fittings and materials | [Supplier catalog](https://almagdest.net/index.php/import-and-export/) |
-| Sana'a, Al-Talh Plastic | Irrigation and liquid-handling parts | [Manufacturer website](https://www.altalhplastik.com/index.php?lang=en) |
-| Egypt, Bioenergy Association for Sustainable Development | Household installation experience and regional technical contacts | [Official website](https://bio-egypt.org/) |
-| Morocco, Biodôme Maroc | Fixed-dome concrete farm systems | [Manufacturer website](https://biodomemaroc.com/?page_id=138) |
-| Jordan, Royal Scientific Society | Thermal performance and research collaboration | [Royal Scientific Society](https://www.rss.jo/) |
+| Fresh manure | 25 kg/day | Assumed household collection |
+| Dilution water | 25 kg/day (1:1) | Common practice; assumed |
+| Slurry density | 1,000 kg/m³ | Assumed |
+| Total solids (TS) of fresh manure | 15% | Assumed |
+| Volatile solids (VS) | 80% of TS | Assumed |
+| Hydraulic retention time | 40–60 days | Assumed |
+| Realized methane yield | 0.20 m³ CH₄/kg VS | Assumed |
+| Methane fraction | 60% (v/v) | Assumed |
+| Methane lower heating value | 35.8 MJ/m³ (normal conditions) | Standard property |
+| LPG lower heating value | 46 MJ/kg | Standard property |
+| Biogas stove efficiency | 55% | Assumed |
+| Burner consumption | 0.35 m³/h | Assumed |
+| Gas utilization | 80% of production | Assumed |
 
-These are leads for inquiries. Water-service catalogs establish no gas-service approval. The original study also identified Oman for logistics and agricultural pilots, Saudi Arabia for industrial procurement and the UAE for import consolidation. It supplied no named household-system offer for those markets.
+**Temperature.** The design case assumes a slurry temperature of about 35 °C. A passive (unheated) digester cannot maintain this temperature. It applies only to warm lowland sites in warm months. Output at cooler sites and in cooler seasons is represented by the lower yield cases (15 and 25 L/kg), not by a separate kinetic model.
 
-### Historical benchmarks and marketplace evidence
+### 2.4 Mass and energy model
 
-| Product | Price reported in conversation | Source |
-|--------|--------|--------|
-| Historical Yemeni household digester | Up to $300 | [BioTreasure historical report](https://www.renewablematter.eu/en/fighting-cholera-with-waste) |
-| Egyptian household biogas system | $800–1,500 | [IsDB technology assessment](https://www.isdb.org/sites/default/files/media/documents/2024-11/Mapping%20affordable%20and%20tranferrable%20climate-smart.pdf) |
-| Chinese household digester | $250 | [PUXIN product listing](https://www.zddshop.com/product/chinese-household-anaerobic-biogas-digester-for-home-use-165979.htm) |
-| PUXIN 2 m³ gas-storage bag | $60–80 each | [Alibaba listing](https://wholesaler.alibaba.com/product-detail/PUXIN-biogas-storage-bag-2m3_263927194.html) |
+Daily slurry feed, Q = (25 + 25) kg / 1,000 kg/m³ = 0.050 m³/day.
+TS = 25 × 0.15 = 3.75 kg/day.
+VS = 3.75 × 0.80 = 3.00 kg/day.
+Liquid working volume, V = Q × HRT = 2–3 m³.
+Organic loading rate = VS / V = 1.0–1.5 kg VS/(m³·day).
 
-The Yemen figure is a 2019 report. The Egypt range is attributed to a 2024 technology assessment. System sizes, dates, subsidies and included installation work may differ. The Chinese $250 listing reportedly excluded VAT. The storage-bag listing specified two units minimum, equivalent to $120–160 before negotiated shipping. Listing amounts are retained as reported and require reconfirmation.
+Methane = 3.00 × 0.20 = 0.60 m³/day, so biogas = 0.60 / 0.60 = 1.00 m³/day. This equals the 40 L/kg design yield.
 
-| Additional international comparison | Previously reported USD price | Evidence |
-|---|---:|---|
-| PUXIN flexible digester | $183–298 | [Alibaba category page](https://www.alibaba.com/catalog/Biogas_cid100002825?categoryId=100002825&page=4), listing lead |
-| Minerva household unit | $299–310 | [Alibaba collection](https://www.alibaba.com/picks/biodigester-machine.html), listing lead |
-| Pinnacle single burner | $12.60 | [Supplier catalog](https://www.pinnaclebiogastech.com/product/), burner only |
-| HomeBiogas system | From $975 | [Manufacturer page](https://landing.homebiogas.com/), scope and destination to confirm |
-| TEMSAN BİOTEM, Türkiye | Quote required | [Manufacturer product page](https://www.temsan.gov.tr/pr/47/biotem) |
+Annual LPG equivalent (kg) = biogas (m³/yr) × utilization × CH₄ fraction × 35.8 / 46.
 
-### AliExpress allowances
+This energy-equivalence approach assumes equal stove efficiencies for biogas and LPG. If LPG stoves are more efficient, the LPG actually displaced is lower.
 
-| Component | Budget allowance | Search |
-|--------|--------|--------|
-| Dedicated biogas cooking appliance | $15–35 | [AliExpress](https://www.aliexpress.com/wholesale?SearchText=biogas+stove) |
-| Temperature instrument | $5–12 | [AliExpress](https://www.aliexpress.com/wholesale?SearchText=digital+temperature+meter) |
-| pH instrument | $10–30 | [AliExpress](https://www.aliexpress.com/wholesale?SearchText=ph+meter) |
-| Gas-flow instrumentation | $20–60 | [AliExpress](https://www.aliexpress.com/wholesale?SearchText=biogas+flow+meter) |
-| H₂S conditioning equipment | $20–50 | [AliExpress](https://www.aliexpress.com/wholesale?SearchText=biogas+desulfurization+filter) |
-| Gas detection equipment | $30–100+ | [AliExpress](https://www.aliexpress.com/wholesale?SearchText=methane+gas+detector) |
+### 2.5 Economic model
 
-Each link opens a search. The original research also mentioned an archived $43.59 burner observation without a recoverable direct listing. No AliExpress checkout price, gas compatibility or delivery to Yemen was established. These allowances overlap with the equipment budget below.
+- Gross saving = LPG equivalent × LPG price (USD/kg).
+- Net saving = gross saving − operating cost.
+- Simple payback = capital / net saving. Payback is undefined when net saving ≤ 0.
+- NPV = −capital + net saving × [1 − (1 + r)⁻ⁿ] / r, with r = 0.10 and n = 10. The annuity factor is 6.1446.
 
-## 5. Installed cost and annual operating cost
+The base case uses $400 capital and $25/year operating cost. The $25/year assumes owned manure, low-cost water and unpaid household labour. It may be understated where water is purchased. Water cost alone adds 9.125 × (USD per m³ of delivered water) per year.
 
-| Equipment | Arabic description | Low cost | High cost |
-|--------|--------|--------|--------|
-| Reactor structure | جسم المفاعل | $110 | $180 |
-| Slurry preparation module | خزان خلط المخلفات | $25 | $55 |
-| Gas storage | خزان الغاز الحيوي | $35 | $65 |
-| Gas conditioning | وحدة تنقية الغاز | $25 | $45 |
-| Cooking appliance | موقد الغاز الحيوي | $20 | $40 |
-| Gas safety system | منظومة أمان الغاز | $35 | $70 |
-| Liquid piping and fittings | الأنابيب والوصلات | $20 | $40 |
-| Fabrication and installation | التصنيع والتركيب | $50 | $90 |
-| Monitoring equipment | أجهزة القياس والمراقبة | $30 | $65 |
-| Protection and insulation | العزل والحماية | $20 | $40 |
-| **Subtotal** |  | **$370** | **$690** |
-| Contingency — 15% |  | $55.50 | $103.50 |
-| **Estimated total** |  | **$425.50** | **$793.50** |
+### 2.6 LPG price inputs
 
-The bill of materials is a conceptual installed-cost estimate. Freight, customs, inland transport, site-specific civil works, engineering review and higher-grade safety devices can raise it. The gas-storage allowance, for example, may be insufficient if the two-unit import minimum applies.
+Six cylinder-price observations for Aden and Sana'a (2024–2026) were carried over from the original study [U01]. They were converted using 1,562 YER/USD [U02]. Neither the observations nor the exchange rate could be traced to a primary source. The cylinder net mass is not reported, so prices are shown per kilogram for 10, 12, 12.5 and 20 kg cylinders. The economic results are therefore presented across a price grid ($0.30–1.50/kg) rather than for a single price.
 
-| Development stage | Estimated unit cost |
-|--------|--------|
-| First functional prototype | $550–900 |
-| Small-batch installed system | $425–795 |
-| Mature local manufacturing target | $300–450 |
-| Proposed future retail target | $400–600 |
+### 2.7 Cost inputs
 
-A repeat-production target and a future retail target describe different stages. For the pilot, request a dated, itemized USD offer showing model, capacity, quantities, excluded works, freight to the governorate, taxes, installation, commissioning, warranty, replacement parts and validity.
+Installed costs come from a component-level estimate (Table 6). Published and marketplace prices (Table 7) were used only to check that estimate. Each marketplace listing was retrieved on 28 November 2026. Its scope (capacity, minimum order quantity, taxes, delivery) is recorded because it limits comparability.
 
-| Annual expense | Estimated cost |
-|--------|--------|
-| Manure from owned livestock | $0 |
-| Water | $0–30+ |
-| Gas-conditioning consumables | $5–15 |
-| Maintenance | $5–15 |
-| Replacement fittings and accessories | $5–10 |
-| Electricity | $0 for passive design |
-| Household labor | Not monetized |
-| **Annual OPEX range** | **$15–70+** |
-| **Financial base case** | **$25/year** |
+### 2.8 Regional resource model
 
-The $25/year case assumes cheap water, owned manure and unpaid household labor. Cash water cost alone equals 9.125 × delivered water price in USD/m³ each year. Value labor and competing uses of manure separately where material.
+Herd sizes for cattle (including buffalo), sheep, goats and camels in the 22 Arab League countries were taken from FAOSTAT [E11]. Data year is 2024, except Palestine (2022). The model applies these coefficients:
 
-## 6. Fuel prices and household economics
+| Species | Fresh manure per head (kg/day) | Biogas yield (m³/kg fresh manure) |
+|---|---|---|
+| Cattle | 10 | 0.040 |
+| Sheep | 1 | 0.050 |
+| Goats | 1 | 0.050 |
+| Camels | 5 | 0.040 |
 
-| Location and market | Approximate cylinder price |
-|--------|--------|
-| Aden, official market | $5.44 |
-| Aden, shortage-driven informal market | $11.52–12.80+ |
-| Sana'a, reported August 2026 | $13 |
-| Sana'a, reported imported LPG prices in 2024 | $13.90–15.80 |
+It also uses 60% methane and 21.5 MJ/m³ of biogas. A uniform 30% collection rate represents manure that can realistically be collected. Results are reported as an **upper-bound technical potential**. The model does not account for differences in collectability between housed and free-ranging animals, or for manure already used as fuel or fertilizer. Household equivalents are given for two demand bases: 1.5 m³/day (the original regional model) and 1.0 m³/day (this study's design case).
 
-These cylinder prices are historical observations as reported in the conversation. The Aden conversion used about 1,562 YER/USD for July–September 2026. The underlying local price reports could not be resolved to direct links in the accessible record. Do not use a shared exchange rate or assumed cylinder mass across governorates. For a pilot, divide the household’s delivered refill cost in USD by its verified net kg of LPG.
+FAOSTAT flags show how reliable each herd figure is. 85% of all head carry flag "I" (imputed by FAO). Only 16% carry flag "A" (official figure). A sensitivity case therefore excludes Sudan, whose figures are entirely imputed.
 
-**Reconstructed cash-flow model.** The accessible Yemen response ended at the start of its financial table. The following results are recalculated from its four LPG scenarios and stated assumptions. The ten-year horizon and 10% real discount rate are additional illustrations. Cash flows are constant, occur at year-end, and exclude financing, major replacements, subsidies, digestate income and residual value.
+## 3. Results
 
-- Annual gross savings = 136.35 kg LPG equivalent × local USD/kg.
-- Annual net savings = gross savings − annual operating cost.
-- Simple payback = installed capital / positive annual net savings.
-- Net present value (NPV) = −capital + annual net savings × [1 − (1 + r)^(−n)] / r.
+### 3.1 Gas production and energy
 
-| LPG price per kg | Gross savings/year | Net savings/year | Payback at $400 | 10-year NPV at 10% |
-|---:|---:|---:|---:|---:|
-| $0.30 | $40.91 | $15.91 | 25.1 years | $-302 |
-| $0.65 | $88.63 | $63.63 | 6.3 years | $-9 |
-| $1.00 | $136.35 | $111.35 | 3.6 years | $284 |
-| $1.50 | $204.53 | $179.53 | 2.2 years | $703 |
+At design yield, the digester produces 1.00 m³/day of biogas, or 365 m³/year. At 80% utilization, 292 m³/year are used, containing 175.2 m³ of methane. This is 1,742 kWh of fuel energy, equivalent to **136.35 kg of LPG per year**. At 55% stove efficiency, 3.28 kWh/day reaches the cookware. The burner can run for 2.86 h/day. This matches the IEA range of two to three hours [E02].
 
-**Decision thresholds.** At $400 installed and $25/year operating cost, a ten-year discounted break-even requires about **$0.66/kg LPG** at target yield. At $0.65/kg, the household can support about **$391 installed** on the same basis. If yield is only 25 L/kg manure, the energy equivalent falls to about **85 kg LPG/year**. At $0.65/kg, net savings then fall to about **$30/year** and simple payback rises to **13.2 years**. At target yield but $70/year operating cost, that payback rises to **21.5 years**. A shortage price improves the result only for the share of purchases actually made at that price.
+The digester needs 9.13 t of manure and 9.13 m³ of water per year.
 
-## 7. Environmental effects, safety and pilot validation
+**Table 3.** Output by gas-yield scenario (25 kg/day manure, 80% utilization).
 
-Capturing methane can improve manure management and displace purchased fuel. The net climate effect depends on how manure was previously stored, methane leakage, digestate storage and the fuel actually displaced. The financial case assigns no carbon or fertilizer revenue. Digestate retains nutrients and can also retain pathogens. A farm needs a plan for covered handling, runoff prevention and agronomically appropriate use. Water availability is a feasibility constraint even if household water carries no cash charge. [US EPA operator guidebook](https://www.epa.gov/sites/default/files/2020-11/documents/agstar-operator-guidebook.pdf)
+| Yield (L/kg) | Biogas (m³/day) | LPG equivalent (kg/yr) |
+|---:|---:|---:|
+| 15 | 0.375 | 51.1 |
+| 25 | 0.625 | 85.2 |
+| 40 (design) | 1.000 | 136.4 |
+| 50 | 1.250 | 170.4 |
 
-| Pilot risk | Evidence or design provision needed |
-|---|---|
-| Flammable methane, toxic H₂S, pressure and condensate | Qualified installer review of gas-rated storage, conditioning, isolation, pressure protection, ventilation and a compatible stove. Never enter a digester or gas-storage space. |
-| Feed variability and cold periods | Weigh collected fresh manure, record water and slurry temperature, and compare seasonal measured output with the design target. |
-| Water scarcity, flooding and digestate exposure | Verify dry-season water cost and site drainage. Document hygienic collection, storage and agricultural use. |
-| Unused gas and overstated savings | Measure both production and stove use. Compare actual refill mass and spending with the household’s baseline. |
-| Cost overrun and replacement delays | Obtain comparable installed quotes and document consumables, replacement intervals and local service arrangements. |
+### 3.2 Economics
 
-## 8. Website, video and CAD handoff
+**Table 4.** Simple payback (years) on a $400 system with $25/year operating cost. "None" means net savings are zero or negative.
 
-Show the flow from cattle shed to feed preparation, reactor and two outputs. Follow gas through storage and conditioning to the stove, and slurry to digestate management. Label liquid working volume, nominal vessel capacity and gas storage separately. A rigid cutaway helps explain the process even if the pilot uses a flexible tube or fixed dome. The diagram is for process communication. Gas-train design and commissioning require a system-specific engineering review.
+| Yield (L/kg) | $0.30/kg | $0.65/kg | $1.00/kg | $1.50/kg | 10-yr NPV break-even price |
+|---:|---:|---:|---:|---:|---:|
+| 15 | None | 48.6 | 15.3 | 7.7 | $1.76/kg |
+| 25 | >100 | 13.2 | 6.6 | 3.9 | $1.06/kg |
+| 40 (design) | 25.1 | 6.3 | 3.6 | 2.2 | $0.66/kg |
+| 50 | 15.3 | 4.7 | 2.8 | 1.7 | $0.53/kg |
 
-| Equipment tag | Equipment | Function |
-|--------|--------|--------|
-| M-101 | Feed preparation tank | Manure and water preparation |
-| R-101 | Anaerobic reactor | Biological gas production |
-| V-101 | Gas storage system | Buffers gas production and demand |
-| F-101 | H₂S removal unit | Removes corrosive sulfur compounds |
-| S-101 | Condensate separator | Removes condensed moisture |
-| TK-102 | Digestate collection | Collects residual slurry |
-| TI-101 | Temperature instrument | Monitors reactor temperature |
-| PI-101 | Pressure instrument | Monitors gas-system pressure |
-| FI-101 | Gas-flow instrument | Measures biogas production |
-| B-101 | Biogas cooking stove | Converts methane into useful heat |
-| SV-101 | Safety protection system | Provides appropriate pressure and isolation protection |
+At design yield, the 10-year NPV is −$302, −$9, +$284 and +$703 at LPG prices of $0.30, $0.65, $1.00 and $1.50 per kg. At $0.65/kg:
+- The system breaks even at an installed cost of about $391.
+- Raising operating cost to $70/year extends payback to 21.5 years.
+- A first prototype at $550–900 takes 8.6–14.1 years to pay back.
 
-For a website calculator, expose fresh manure (kg/day), water ratio, realized gas yield (L/kg), retention time, methane fraction, utilization, local LPG price, installed cost and annual operating cost. Display gross production separately from utilized fuel and useful cooking heat. Report “no payback from fuel savings” when annual net savings are zero or negative.
+### 3.3 LPG price per kilogram
 
-## 9. Evidence limits and conclusion
+**Table 5.** Reported cylinder prices [U01] converted to USD/kg under alternative net masses.
 
-This consolidation draws on the two research responses in [Biogas Feasibility Study](chatgpt-conversation://6b0a143b-6770-83ed-b0f5-a06e0a400945). Both accessible responses have truncated endings. Supplier links and key numerical tables are preserved above. The IEA, EPA and DRC references independently support the household production benchmark, process description and Yemeni pilot precedent, respectively. No site measurements, local feedstock tests, delivered supplier quotations or audited household fuel records were available.
+| Observation | USD/cylinder | 10 kg | 12 kg | 12.5 kg | 20 kg |
+|---|---:|---:|---:|---:|---:|
+| Aden, official market | 5.44 | 0.54 | 0.45 | 0.44 | 0.27 |
+| Aden, informal (low) | 11.52 | 1.15 | 0.96 | 0.92 | 0.58 |
+| Aden, informal (high) | 12.80 | 1.28 | 1.07 | 1.02 | 0.64 |
+| Sana'a, Aug 2026 | 13.00 | 1.30 | 1.08 | 1.04 | 0.65 |
+| Sana'a, 2024 (low) | 13.90 | 1.39 | 1.16 | 1.11 | 0.70 |
+| Sana'a, 2024 (high) | 15.80 | 1.58 | 1.32 | 1.26 | 0.79 |
 
-**Investment conclusion.** The technology and local implementation precedent support a pilot. Broad household deployment needs evidence that a farm can sustain feed and water through the dry season, use the gas when it cooks, maintain the equipment locally and recover its installed cost at the fuel prices it actually pays. Until those four conditions are measured, the $300–450 manufacturing target and 1 m³/day output remain development objectives.
+Under a 20 kg assumption, most observations fall at or below the $0.66/kg break-even price. Under a 10–12.5 kg assumption, every observation except the Aden official price exceeds it. **The cylinder net mass alone determines whether the design case is profitable.**
+
+### 3.4 Installed cost
+
+**Table 6.** Component-level installed-cost estimate (USD).
+
+| Component | Low | High |
+|---|---:|---:|
+| Reactor structure | 110 | 180 |
+| Slurry preparation | 25 | 55 |
+| Gas storage | 35 | 65 |
+| Gas conditioning (H₂S, moisture) | 25 | 45 |
+| Biogas stove | 20 | 40 |
+| Gas safety devices | 35 | 70 |
+| Piping and fittings | 20 | 40 |
+| Fabrication and installation | 50 | 90 |
+| Monitoring instruments | 30 | 65 |
+| Insulation and protection | 20 | 40 |
+| **Subtotal** | **370** | **690** |
+| Contingency (15%) | 55.50 | 103.50 |
+| **Total** | **425.50** | **793.50** |
+
+Freight, customs, inland transport and engineering review are excluded. The $400 base case is therefore below the low estimate. It represents a future target, not a current price.
+
+**Table 7.** External price references.
+
+| Item | Price | Scope and limits | Source |
+|---|---|---|---|
+| Household biogas units, Egypt | $800–1,500 | "Most biogas units"; 2024 assessment | [E05] |
+| Planned home plant, Hadhramaut | Up to $300 | 2019 founder estimate for planned units, not an installed price | [E04] |
+| PUXIN PX-ABS 3.4 m³ digester | $250 | Excludes VAT; **minimum order 100 units** | [E06] |
+| PUXIN 2 m³ PVC gas bag | Reported $60–80 | Minimum order 2 units; price now shown in local currency | [E07] |
+| HomeBiogas household system | From $975 | About 2 h cooking/day; delivery scope to confirm | [E08] |
+| Single biogas burner | $12.60 | Burner only | [E09] |
+
+### 3.5 Regional resource
+
+**Table 8.** Upper-bound technical potential, 22 Arab League countries [E11].
+
+| Quantity | Value |
+|---|---:|
+| Herd | 363.0 million head |
+| Fresh manure | 337.6 Mt/yr |
+| Biogas, full collection | 14.6 billion m³/yr (8.7 billion m³ CH₄) |
+| Fuel energy, full collection | 87 TWh/yr |
+| Biogas, 30% collection | 4.37 billion m³/yr |
+| Households at 30% collection, 1.5 m³/day basis | 8.0 million |
+| Households at 30% collection, 1.0 m³/day basis | 12.0 million |
+| Households at 30% collection, excluding Sudan (1.5 / 1.0 m³/day) | 4.6 / 6.8 million |
+
+By species, cattle contribute 54% of the biogas, sheep 24%, goats 12% and camels 10%. Sudan accounts for 43% of the total. Countries whose herd figures are entirely FAO-imputed account for 60%.
+
+For Yemen, 23.6 million head give 708 million m³ of biogas per year at full collection. That corresponds to 388,000 households at 30% collection on the 1.5 m³/day basis.
+
+## 4. Discussion
+
+### 4.1 Principal findings
+
+The engineering basis is internally consistent. At 40 L/kg, the design output of 1 m³/day matches the IEA household benchmark [E02]. The economics, however, depend on two unmeasured inputs: the LPG price per kilogram and the yield achieved over the year.
+
+Table 4 shows that a fall in yield from 40 to 25 L/kg raises the break-even LPG price from $0.66 to $1.06/kg. Table 5 shows that the LPG prices found are consistent with either side of break-even, depending on the cylinder mass. Neither a positive nor a negative feasibility conclusion is supported until both inputs are measured.
+
+### 4.2 Pilot location
+
+Hadhramaut is a practical pilot location because Bio Treasure, an installer with Yemeni pilot experience, is based there [E03, E12]. That is logistical evidence, not evidence of better performance. The original study's suitability ratings by governorate had no traceable basis [U03] and are withdrawn. Sites should instead be ranked on measured criteria:
+- daily manure collected;
+- dry-season water cost;
+- winter slurry temperature (elevation is a proxy);
+- flood exposure;
+- access to service;
+- LPG receipts.
+
+### 4.3 Regional estimate
+
+The regional figures are a technical upper bound, not a deployment forecast. Four factors make them uncertain:
+1. A uniform 30% collection rate probably overstates collection from free-ranging sheep, goats and camels.
+2. Manure already used as fuel or fertilizer is not deducted.
+3. The household basis changes the result by 50% (8.0 vs 12.0 million).
+4. Most herd figures are FAO estimates. Sudan's figures have been imputed during the conflict that began in 2023, and Sudan alone contributes 43% of the potential.
+
+### 4.4 Environmental and safety considerations
+
+Capturing methane from manure can improve manure management. The net climate effect depends on the previous manure storage practice, methane leakage, digestate storage and the fuel displaced. None of these was quantified.
+
+Digestate contains nutrients but can carry pathogens. It needs covered handling and appropriate application to land [E10]. It should not be presented as a straightforward substitute for mineral fertilizer.
+
+Biogas is flammable, and H₂S is toxic. A qualified review of gas storage, conditioning, pressure protection and ventilation is required before commissioning. Nobody should enter a digester or a gas-storage space.
+
+### 4.5 Limitations
+
+- No field measurements, feedstock analyses, supplier quotations or household fuel records were available.
+- All yields and costs are assumptions.
+- LPG prices and the exchange rate are untraceable [U01, U02].
+- The model is deterministic. A probabilistic analysis over yield, price, capital, operating cost and utilization would show which inputs dominate the result.
+- The installed-cost evidence (Table 7) differs in capacity, date and scope.
+
+## 5. Conclusions and pilot requirements
+
+A measured household pilot in Hadhramaut is justified as a way to obtain the missing inputs. It should not be treated as a demonstration of feasibility. The pilot should record:
+
+1. The weight of fresh manure fed and the volume of water added each day.
+2. Slurry temperature, at least weekly.
+3. Gas produced and gas burned, metered separately on a stated temperature and pressure basis.
+4. The household's LPG refill receipts: price paid, net kg per cylinder and refill dates, before and during operation.
+5. An itemized, dated installed-cost quotation that includes freight, taxes and commissioning.
+6. Operating costs: water, H₂S media and repairs.
+
+Broad deployment claims should wait until a full year of measurements shows sustained yield, use of the gas, local maintenance and recovery of the installed cost at the LPG prices households actually pay.
+
+## 6. Declarations
+
+- **Funding:** not reported.
+- **Competing interests:** not reported.
+- **Author contributions:** to be confirmed by the author.
+- **Data and code availability:** herd data are in `arab-livestock-chart/arab_livestock_faostat_2024.csv`. The regional model is in `arab-livestock-chart/biogas_calc.py`. The household model is fully specified in §2.
+- **Use of AI:** AI assistance (Claude) was used to check calculations and links, conduct the post-publication review and draft this revision. It used the peer-review and scientific-writing skills of Scientific Agent Skills (Kassis et al., 2026, arXiv:2609.00065; the arXiv record could not be retrieved on 28 November 2026, so verify before citing). Sources marked unverified in §8 remain unverified.
+
+## 7. Appendix: supplier inquiry leads
+
+These are leads for quotations, not evidence of suitability. Catalogues for water-service components do not establish that a product is suitable for biogas.
+
+| Location | Organization | Inquiry |
+|---|---|---|
+| Mukalla | Bio Treasure [E12] | Complete system, installation, maintenance, pilot data |
+| Yemen | Middle East Plastic Industries; Al-Kbous Group; Art Plast; Al-Talh Plastic | Tanks, pipes, fittings |
+| Mukalla | Bin Yaqoub (BTG Bawazir) | HDPE fabrication (website refused automated access) |
+| Aden | Al-Magd | Water/wastewater fittings |
+| Egypt | Bioenergy Association for Sustainable Development | Installation experience |
+| Morocco | Biodôme Maroc | Fixed-dome systems (website unreachable 28 Nov 2026) |
+| Jordan | Royal Scientific Society | Thermal-performance research |
+| Türkiye | TEMSAN (BİOTEM) | Quotation required |
+
+## 8. Evidence register
+
+Status "retrieved" means the source was opened on 28 November 2026 and the cited proposition was found in its text with AI assistance. Human verification is still pending for every entry.
+
+| ID | Source | Supports | Status |
+|---|---|---|---|
+| E01 | US EPA AgSTAR, "How does anaerobic digestion work?" https://www.epa.gov/agstar/how-does-anaerobic-digestion-work | Process stages, biogas composition | Retrieved (HTTP 200) |
+| E02 | IEA, *Outlook for biogas and biomethane*, "Sustainable supply potential and costs" (citing SNV 2019). https://www.iea.org/reports/outlook-for-biogas-and-biomethane-prospects-for-organic-growth/sustainable-supply-potential-and-costs | ~1 m³/day; 2–3 h cooking per 20–30 kg manure | Retrieved; text matched |
+| E03 | Danish Refugee Council, "Yemen – Piloting biogas…", 1 June 2023. https://drc.ngo/en/news/yemen-piloting-biogas-as-a-source-of-clean-energy-and-fertilizer-in-partnership-with-yemini-social-enterprise/ | DRC–Bio Treasure household pilot | Retrieved; text matched |
+| E04 | Baños Ruiz I., "Fighting cholera with waste", *Renewable Matter* #25, 18 January 2019. https://www.renewablematter.eu/en/fighting-cholera-with-waste | "Up to $300", planned Hadhramaut plants | Retrieved; text matched |
+| E05 | Islamic Development Bank, *Mapping affordable and transferrable climate-smart technologies for smallholder farmers*, November 2024, p. 73 | Egypt household units $800–1,500 | Retrieved; text matched |
+| E06 | zddshop, PUXIN PX-ABS-3.4m3 listing. https://www.zddshop.com/product/chinese-household-anaerobic-biogas-digester-for-home-use-165979.htm | $250 excl. VAT; MOQ 100 | Retrieved; text matched |
+| E07 | Alibaba, PUXIN 2 m³ biogas storage bag. https://wholesaler.alibaba.com/product-detail/PUXIN-biogas-storage-bag-2m3_263927194.html | MOQ 2; USD price not confirmed | Retrieved; partly matched |
+| E08 | HomeBiogas. https://landing.homebiogas.com/ | From $975 | Retrieved; text matched |
+| E09 | Pinnacle Biogas Tech, product catalogue. https://www.pinnaclebiogastech.com/product/ | Single burner $12.60 | Retrieved; text matched |
+| E10 | US EPA AgSTAR, *Operator guidebook* (2020). https://www.epa.gov/sites/default/files/2020-11/documents/agstar-operator-guidebook.pdf | Digestate handling, safety | Retrieved (HTTP 200); proposition not text-matched |
+| E11 | FAOSTAT Crops and livestock products (QCL), data year 2024 (Palestine 2022), as stored in `arab_livestock_faostat_2024.csv` | Herd sizes and flags | Local copy checked; live FAOSTAT unavailable (HTTP 521) |
+| E12 | Bio Treasure, company website. https://biotreasure.co/ | Mukalla address | Retrieved; text matched |
+| U01 | Yemeni LPG cylinder prices (Aden, Sana'a, 2024–2026) | Table 5 | **Unverified: no traceable source** |
+| U02 | Exchange rate 1,562 YER/USD (Aden, Jul–Sep 2026) | Table 5 | **Unverified: no traceable source** |
+| U03 | Governorate suitability ratings from the original study | (withdrawn) | **Unverified: withdrawn** |

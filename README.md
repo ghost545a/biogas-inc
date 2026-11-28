@@ -10,7 +10,9 @@ with their values in accessible tables. Read the full study in
 the original [English Markdown](research/BioYemen_Feasibility_Study.md) or
 [Arabic Markdown](research/BioYemen_Feasibility_Study_AR.md).
 
-The supplied charts credit FAOSTAT 2024 for livestock counts. The regional model
+The study was revised on 28 November 2026 after a post-publication review: it now separates verified sources from unverified inputs, shows how payback depends on gas yield and LPG price per kg, and presents the regional figures as an upper-bound technical potential.
+
+The supplied charts credit FAOSTAT 2024 for livestock counts; most are FAO estimates rather than reported figures. The regional model
 estimates gas at full collection and at 30% manure collection, with 1.5 m³/day
 per household cooking equivalent. The household study separately assumes 80%
 use of the gas produced by one digester.
