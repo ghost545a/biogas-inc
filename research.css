@@ -72,3 +72,126 @@
   font-family: "IBM Plex Sans", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
 }
 .study-page .lang a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+
+/* ---------------------------------------------------------------------------
+   Apple design pass (28 Nov 2026)
+   Materials: translucent sticky bar with a scroll-edge shadow, not a divider.
+   Type: size-specific leading and tracking; Arabic is never tracked.
+   Tables: grouped lists — caption as group title, hairline rows, quiet header.
+   Wayfinding: sticky contents sidebar with the current section marked.
+--------------------------------------------------------------------------- */
+
+/* Translucent top bar on the study pages */
+.study-page .topbar {
+  position: sticky; top: 0; z-index: 20;
+  max-width: none; border-bottom: 0;
+  margin-inline: calc(-1 * max(1rem, env(safe-area-inset-left)));
+  padding-inline: max(1rem, calc((100% - 76rem) / 2));
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+}
+@supports (animation-timeline: scroll()) {
+  .study-page .topbar { animation: scroll-edge linear both; animation-timeline: scroll(root); animation-range: 0 3rem; }
+  @keyframes scroll-edge {
+    from { box-shadow: 0 0 0 transparent; }
+    to { box-shadow: 0 1px 0 var(--line), 0 6px 18px -12px rgb(0 0 0 / .35); }
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .study-page .topbar { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+@media (prefers-contrast: more) {
+  .study-page .topbar { background: var(--bg); border-bottom: 1px solid var(--ink-2); }
+}
+.study-page .lang {
+  gap: 0; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+}
+.study-page .lang a {
+  padding: .25rem .85rem; border-radius: 999px; color: var(--ink-2);
+  text-decoration: none; font-size: .875rem; font-weight: 600;
+}
+.study-page .lang a[aria-current="page"] { background: var(--accent); color: var(--accent-ink); }
+
+/* Type: tighter leading and negative tracking as size grows (Latin only) */
+.study-page:lang(en) { line-height: 1.6; }
+.study-page:lang(ar) { line-height: 1.85; }
+.study-page h1 {
+  font-size: clamp(1.6rem, 1.1rem + 1.8vw, 2.25rem);
+  line-height: 1.15; font-weight: 700; margin-block: .75rem .25rem;
+}
+.study-page h2 { line-height: 1.25; margin-block: 0 .75rem; }
+.study-page h3 { line-height: 1.35; margin-block: 1.75rem .5rem; }
+.study-page:lang(en) h1 { letter-spacing: -.022em; }
+.study-page:lang(en) h2 { letter-spacing: -.012em; }
+.research:lang(en) :is(h2, h3) { letter-spacing: -.012em; }
+.study-page :is(p, li) { max-inline-size: 68ch; }
+.study-page .byline { color: var(--ink-2); font-size: .9375rem; margin-block: .5rem; }
+.study-page .download { font-weight: 600; }
+
+/* Layout: reading column, sticky contents sidebar on wide screens */
+.study-page main { max-width: 52rem; }
+.study-section { margin-block-start: 3rem; }
+.study-section:first-child { margin-block-start: 1.5rem; }
+.study-section.abstract {
+  padding: clamp(1rem, 3vw, 1.75rem);
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface);
+}
+.study-section.abstract h2 { margin-block-start: 0; }
+.study-section.abstract p:last-child { margin-block-end: 0; }
+.study-toc nav ul { list-style: none; margin: 0 0 .75rem; padding: 0; }
+.study-toc nav a {
+  display: block; padding: .4rem .65rem; border-radius: .55rem;
+  color: var(--ink-2); text-decoration: none; line-height: 1.35;
+}
+.study-toc nav a[aria-current="location"] { color: var(--ink); background: var(--stage); font-weight: 600; }
+@media (hover: hover) { .study-toc nav a:hover { color: var(--ink); background: var(--stage); } }
+@media (min-width: 1100px) {
+  .study-page main { max-width: 76rem; }
+  .study-page .study-head { max-width: 52rem; margin-inline-start: calc(16rem + 3rem); }
+  .study-layout { display: grid; grid-template-columns: 16rem minmax(0, 52rem); gap: 3rem; align-items: start; }
+  .study-toc {
+    position: sticky; top: 5rem; max-height: calc(100vh - 6rem); overflow: auto;
+    margin: 1.5rem 0 0; padding: 0; border: 0; background: none;
+  }
+  .study-toc summary {
+    pointer-events: none; list-style: none; padding-block: 0 .5rem;
+    color: var(--ink-2); font-size: .8125rem;
+  }
+  .study-toc summary::-webkit-details-marker { display: none; }
+  .study-toc nav a { font-size: .875rem; }
+  .study-page footer { max-width: 76rem; }
+}
+
+/* Tables as grouped lists */
+.research table, .study-page table {
+  border-collapse: separate; border-spacing: 0;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); overflow: hidden;
+}
+.research thead, .study-page thead { background: none; }
+.research thead th, .study-page thead th {
+  color: var(--ink-2); font-size: .8125rem; font-weight: 600; line-height: 1.35;
+  vertical-align: bottom;
+}
+.research :is(td, th), .study-page :is(td, th) { padding: .6rem .85rem; border-bottom: 1px solid var(--line); }
+.research tbody tr:last-child > *, .study-page tbody tr:last-child > * { border-bottom: 0; }
+.research tbody th, .study-page tbody th { font-weight: 500; }
+.research caption, .study-page caption {
+  caption-side: top; padding: 0 .15rem .5rem; color: var(--ink);
+  font-weight: 600; line-height: 1.45;
+}
+.study-page .num { text-align: end; }
+.study-page td a, .study-page th a { overflow-wrap: anywhere; }
+.study-page .table-scroll { margin-block: 1rem 1.5rem; }
+@media (hover: hover) {
+  .research tbody tr:hover > *, .study-page tbody tr:hover > * { background: color-mix(in srgb, var(--stage) 45%, transparent); }
+}
+
+/* Press feedback and gentle scrolling */
+.study-page a:active, .research a:active { opacity: .6; }
+.study-toc summary:active { opacity: .6; }
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.study-page) { scroll-behavior: smooth; }
+}
+.study-page footer { border-bottom: 0; border-top: 1px solid var(--line); margin-block-start: 3rem; }

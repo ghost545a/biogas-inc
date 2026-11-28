@@ -82,3 +82,39 @@ html { background: var(--bg); }
 .poster-rule span:nth-child(4), .chart-sheet[data-species="camels"] { --series: var(--poster-camels); }
 .poster-rule span { background: var(--series); }
 .research .chart-sheet[data-species] { border-inline-start: 4px solid var(--series); }
+
+/* Apple design pass: the appearance switch is one segmented control that
+   matches the language pill; press feedback on touch-down. */
+.theme-control {
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+}
+.theme-control button {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-2);
+  transition: transform 100ms ease-out, background-color 150ms ease;
+}
+@media (pointer: fine) {
+  .theme-control button { min-inline-size: 2.25rem; min-block-size: 2rem; }
+}
+.theme-control button[aria-pressed="true"] {
+  box-shadow: none;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.theme-control button:active { transform: scale(.94); }
+@media (hover: hover) {
+  .theme-control button:not([aria-pressed="true"]):hover { background: var(--stage); color: var(--ink); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-control button { transition: background-color 150ms ease; }
+  .theme-control button:active { transform: none; }
+}
+@media (prefers-contrast: more) {
+  .theme-control { border-color: var(--ink-2); }
+}
