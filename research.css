@@ -184,9 +184,13 @@
 .study-page .num { text-align: end; }
 .study-page td a, .study-page th a { overflow-wrap: anywhere; }
 .study-page .table-scroll { margin-block: 1rem 1.5rem; }
-@media (hover: hover) {
-  .research tbody tr:hover > *, .study-page tbody tr:hover > * { background: color-mix(in srgb, var(--stage) 45%, transparent); }
-}
+/* Deslop: a table inside a chart card is part of that card, not a box in a box. */
+.research .chart-sheet table { border: 0; border-radius: 0; background: none; overflow: visible; }
+.research .chart-sheet :is(td, th):first-child { padding-inline-start: 0; }
+.research .chart-sheet :is(td, th):last-child { padding-inline-end: 0; }
+/* Numbers line up: values right-aligned (end) in chart and payback tables. */
+.research .chart-sheet td, .research #household td,
+.research .chart-sheet thead th:not(:first-child), .research #household thead th:not(:first-child) { text-align: end; }
 
 /* Press feedback and gentle scrolling */
 .study-page a:active, .research a:active { opacity: .6; }
